@@ -1,0 +1,18 @@
+export const nav = {
+  'nav.appName': 'Docuflow',
+  'nav.hamburger': 'Buka menu',
+  'nav.switchLang': 'Ganti bahasa',
+  'nav.switchTheme': 'Ganti tema',
+  'nav.userMenu': 'Menu pengguna',
+  'nav.signOut': 'Keluar',
+  'nav.quickAdd': 'Tambah',
+  'nav.quickAdd.customer': 'Pelanggan Baru',
+  'nav.quickAdd.supplier': 'Pemasok Baru',
+  'nav.quickAdd.document': 'Dokumen Baru',
+  'nav.search': 'Cari',
+  'nav.searchPlaceholder': 'Cari pelanggan, produk, dokumen...',
+  'nav.searchClose': 'Tutup pencarian',
+  'nav.notifications': 'Notifikasi',
+  'nav.markAllRead': 'Tandai semua dibaca',
+  'nav.noNotifications': 'Tidak ada notifikasi',
+};

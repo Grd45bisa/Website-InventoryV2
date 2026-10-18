@@ -1,0 +1,540 @@
+/* Root and Light Mode Theme Variables */
+:root, .theme-light {
+  /* Surfaces */
+  --color-bg:          #F7F7F8;   /* Page background — cool off-white */
+  --color-surface:     #FFFFFF;   /* Cards, panels, modals */
+  --color-surface-alt: #F2F2F5;   /* Hover rows, sidebar tray, code blocks */
+  --color-overlay:     rgba(10, 10, 10, 0.40); /* Modal scrim */
+
+  /* Borders */
+  --color-border:      #E4E4E9;   /* Default dividers, card outlines */
+  --color-border-subtle: #EEEEEF; /* Table row dividers, intra-card lines */
+  --color-border-focus: #6366F1;  /* Focus rings — same as interactive */
+
+  /* Text */
+  --color-text-primary:   #0D0D0F; /* Headings, labels */
+  --color-text-secondary: #6C6C78; /* Descriptions, metadata */
+  --color-text-muted:     #A1A1AA; /* Placeholders, timestamps, disabled */
+  --color-text-inverse:   #FFFFFF; /* Text on filled dark or indigo surfaces */
+  --color-text-link:      #6366F1; /* Inline links */
+
+  /* Interactive (Indigo — exclusively for interactive elements) */
+  --color-interactive:       #6366F1;
+  --color-interactive-hover: #4F46E5;
+  --color-interactive-light: rgba(99, 102, 241, 0.08);
+  --color-interactive-ring:  rgba(99, 102, 241, 0.16);
+
+  /* Primary aliases (maps directly to active theme palette) */
+  --color-primary:           var(--color-interactive);
+  --color-primary-hover:     var(--color-interactive-hover);
+  --color-primary-surface:   var(--color-interactive-light);
+  --color-primary-light:     var(--color-interactive-light);
+  --color-primary-ring:      var(--color-interactive-ring);
+
+  /* Brand accent (Genesis logo / homepage callout only) */
+  --color-brand-accent: #1A9A06;
+
+  /* Semantic */
+  --color-success:         #16A34A;
+  --color-success-surface: #F0FDF4;
+  --color-warning:         #D97706;
+  --color-warning-surface: #FFFBEB;
+  --color-danger:          #DC2626;
+  --color-danger-surface:  #FEF2F2;
+  --color-info:            #0284C7;
+  --color-info-surface:    #F0F9FF;
+
+  /* Spacing (Base unit: 8px) */
+  --space-0-5: 2px;
+  --space-1:  4px;
+  --space-1-5: 6px;
+  --space-2:  8px;
+  --space-2-5: 10px;
+  --space-3:  12px;
+  --space-3-5: 14px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* Typography */
+  --font-display: 'General Sans', system-ui, sans-serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Type Scale */
+  --text-display:  4.5rem; /* 72px */
+  --text-headline: 3rem; /* 48px */
+  --text-section:  2rem; /* 32px */
+  --text-subhead:  1.375rem; /* 22px */
+  --text-body-lg:  1rem; /* 16px */
+  --text-body:     0.875rem; /* 14px */
+  --text-small:    0.8125rem; /* 13px */
+  --text-caption:  0.75rem; /* 12px */
+  --text-overline: 0.6875rem; /* 11px */
+
+  /* Tracking */
+  --tracking-display: -0.04em;
+  --tracking-headline: -0.03em;
+  --tracking-section: -0.02em;
+  --tracking-overline: 0.08em;  /* Loose for uppercase labels */
+
+  /* Line height */
+  --leading-display:  1.05;
+  --leading-heading:  1.2;
+  --leading-body:     1.6;
+  --leading-code:     1.7;
+
+  /* Border Radius */
+  --radius-xs:   4px;  /* Inline badges, code chips, tags */
+  --radius-sm:   6px;  /* Buttons, inputs, selects, dropdowns */
+  --radius-md:   8px;  /* Metadata cards, popovers, tooltips */
+  --radius-lg:   12px; /* Kit preview cards, modals, panels */
+  --radius-xl:   16px; /* Large feature surfaces, search bars */
+  --radius-full: 9999px; /* Avatars, status dots, pill badges */
+
+  /* Elevation & Shadow */
+  --shadow-none: none;
+  --shadow-focus: 0 0 0 3px var(--color-interactive-ring);
+  --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.07), 0 2px 6px rgba(0, 0, 0, 0.04);
+  --shadow-btn-hover: 0 4px 14px rgba(99, 102, 241, 0.30);
+  --shadow-popover: 0 8px 32px rgba(0, 0, 0, 0.10), 0 2px 8px rgba(0, 0, 0, 0.06);
+
+  /* Transitions & Motion */
+  --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);   /* Element enters */
+  --ease-in:    cubic-bezier(0.4, 0, 1, 1);        /* Element exits */
+  --ease-inout: cubic-bezier(0.4, 0, 0.2, 1);      /* State changes */
+
+  --duration-fast:   120ms; /* Hover color/bg changes */
+  --duration-base:   200ms; /* Card lifts, button states */
+  --duration-slow:   320ms; /* Modals, drawers, page transitions */
+}
+
+/* ============================================================
+   Palette System — override accent colors per user preference
+   ============================================================
+   Each palette overrides only accent-dependent variables.
+   Palette classes combine with .theme-light or .theme-dark.
+   'indigo' is the default (defined in :root / .theme-dark).
+   ============================================================ */
+
+/* Emerald — fresh, growth-oriented */
+.palette-emerald {
+  --color-interactive:       #10B981;
+  --color-interactive-hover: #059669;
+  --color-interactive-light: rgba(16, 185, 129, 0.08);
+  --color-interactive-ring:  rgba(16, 185, 129, 0.16);
+  --color-border-focus:      #10B981;
+  --color-text-link:         #10B981;
+}
+.theme-dark.palette-emerald {
+  --color-interactive:       #34D399;
+  --color-interactive-hover: #10B981;
+  --color-interactive-light: rgba(52, 211, 153, 0.10);
+  --color-interactive-ring:  rgba(52, 211, 153, 0.18);
+  --color-border-focus:      #34D399;
+  --color-text-link:         #34D399;
+  --shadow-btn-hover: 0 4px 14px rgba(52, 211, 153, 0.50);
+}
+
+/* Rose — bold, warm */
+.palette-rose {
+  --color-interactive:       #F43F5E;
+  --color-interactive-hover: #E11D48;
+  --color-interactive-light: rgba(244, 63, 94, 0.08);
+  --color-interactive-ring:  rgba(244, 63, 94, 0.16);
+  --color-border-focus:      #F43F5E;
+  --color-text-link:         #F43F5E;
+}
+.theme-dark.palette-rose {
+  --color-interactive:       #FB7185;
+  --color-interactive-hover: #F43F5E;
+  --color-interactive-light: rgba(251, 113, 133, 0.10);
+  --color-interactive-ring:  rgba(251, 113, 133, 0.18);
+  --color-border-focus:      #FB7185;
+  --color-text-link:         #FB7185;
+  --shadow-btn-hover: 0 4px 14px rgba(251, 113, 133, 0.50);
+}
+
+/* Amber — sunny, energetic */
+.palette-amber {
+  --color-interactive:       #F59E0B;
+  --color-interactive-hover: #D97706;
+  --color-interactive-light: rgba(245, 158, 11, 0.08);
+  --color-interactive-ring:  rgba(245, 158, 11, 0.16);
+  --color-border-focus:      #F59E0B;
+  --color-text-link:         #F59E0B;
+}
+.theme-dark.palette-amber {
+  --color-interactive:       #FBBF24;
+  --color-interactive-hover: #F59E0B;
+  --color-interactive-light: rgba(251, 191, 36, 0.10);
+  --color-interactive-ring:  rgba(251, 191, 36, 0.18);
+  --color-border-focus:      #FBBF24;
+  --color-text-link:         #FBBF24;
+  --shadow-btn-hover: 0 4px 14px rgba(251, 191, 36, 0.50);
+}
+
+/* Sky — calm, professional */
+.palette-sky {
+  --color-interactive:       #0EA5E9;
+  --color-interactive-hover: #0284C7;
+  --color-interactive-light: rgba(14, 165, 233, 0.08);
+  --color-interactive-ring:  rgba(14, 165, 233, 0.16);
+  --color-border-focus:      #0EA5E9;
+  --color-text-link:         #0EA5E9;
+}
+.theme-dark.palette-sky {
+  --color-interactive:       #38BDF8;
+  --color-interactive-hover: #0EA5E9;
+  --color-interactive-light: rgba(56, 189, 248, 0.10);
+  --color-interactive-ring:  rgba(56, 189, 248, 0.18);
+  --color-border-focus:      #38BDF8;
+  --color-text-link:         #38BDF8;
+  --shadow-btn-hover: 0 4px 14px rgba(56, 189, 248, 0.50);
+}
+
+/* Violet — creative, premium */
+.palette-violet {
+  --color-interactive:       #8B5CF6;
+  --color-interactive-hover: #7C3AED;
+  --color-interactive-light: rgba(139, 92, 246, 0.08);
+  --color-interactive-ring:  rgba(139, 92, 246, 0.16);
+  --color-border-focus:      #8B5CF6;
+  --color-text-link:         #8B5CF6;
+}
+.theme-dark.palette-violet {
+  --color-interactive:       #A78BFA;
+  --color-interactive-hover: #8B5CF6;
+  --color-interactive-light: rgba(167, 139, 250, 0.10);
+  --color-interactive-ring:  rgba(167, 139, 250, 0.18);
+  --color-border-focus:      #A78BFA;
+  --color-text-link:         #A78BFA;
+  --shadow-btn-hover: 0 4px 14px rgba(167, 139, 250, 0.50);
+}
+
+/* Dark Mode Theme Variables */
+.theme-dark {
+  /* Surfaces */
+  --color-bg:          #0C0C10;
+  --color-surface:     #131318;
+  --color-surface-alt: #1A1A22;
+  --color-overlay:     rgba(0, 0, 0, 0.60);
+
+  /* Borders */
+  --color-border:        #26262F;
+  --color-border-subtle: #1E1E26;
+  --color-border-focus:  #818CF8;
+
+  /* Text */
+  --color-text-primary:   #F4F4F6;
+  --color-text-secondary: #8E8E9E;
+  --color-text-muted:     #4B4B5A;
+  --color-text-inverse:   #0C0C10;
+  --color-text-link:      #818CF8;
+
+  /* Interactive */
+  --color-interactive:       #818CF8;
+  --color-interactive-hover: #6366F1;
+  --color-interactive-light: rgba(129, 140, 248, 0.10);
+  --color-interactive-ring:  rgba(129, 140, 248, 0.18);
+
+  /* Brand accent */
+  --color-brand-accent: #22C55E;
+
+  /* Semantic */
+  --color-success:         #22C55E;
+  --color-success-surface: #052E16;
+  --color-warning:         #F59E0B;
+  --color-warning-surface: #1C1100;
+  --color-danger:          #F87171;
+  --color-danger-surface:  #1E0A0A;
+  --color-info:            #38BDF8;
+  --color-info-surface:    #03111D;
+
+  /* Elevation (multiplying light mode by 2.5) */
+  --shadow-btn-hover: 0 4px 14px rgba(129, 140, 248, 0.50);
+  --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.18), 0 2px 6px rgba(0, 0, 0, 0.10);
+  --shadow-popover: 0 8px 32px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================================
+   Darkness Levels — fine-tune dark mode intensity
+   ============================================================
+   'dark' is the default (defined in .theme-dark above).
+   'soft' is lighter; 'deep' is more contrast.
+   ============================================================ */
+
+/* Soft dark — easier on the eyes */
+.theme-dark.darkness-soft {
+  --color-bg:          #16161D;
+  --color-surface:     #1E1E26;
+  --color-surface-alt: #26262F;
+  --color-overlay:     rgba(0, 0, 0, 0.50);
+  --color-border:      #30303C;
+  --color-border-subtle: #26262F;
+  --color-text-primary:   #E8E8ED;
+  --color-text-secondary: #9E9EAB;
+  --color-text-muted:     #6A6A7A;
+  --color-text-inverse:   #16161D;
+  --color-interactive-light: rgba(129, 140, 248, 0.08);
+  --color-interactive-ring:  rgba(129, 140, 248, 0.14);
+  --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.06);
+  --shadow-popover: 0 8px 32px rgba(0, 0, 0, 0.18), 0 2px 8px rgba(0, 0, 0, 0.10);
+}
+
+/* Deep dark — maximum contrast */
+.theme-dark.darkness-deep {
+  --color-bg:          #050508;
+  --color-surface:     #08080C;
+  --color-surface-alt: #0E0E14;
+  --color-overlay:     rgba(0, 0, 0, 0.70);
+  --color-border:      #181820;
+  --color-border-subtle: #101018;
+  --color-text-primary:   #FFFFFF;
+  --color-text-secondary: #A8A8B8;
+  --color-text-muted:     #505060;
+  --color-text-inverse:   #050508;
+  --color-interactive-light: rgba(129, 140, 248, 0.12);
+  --color-interactive-ring:  rgba(129, 140, 248, 0.22);
+  --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.25), 0 2px 6px rgba(0, 0, 0, 0.15);
+  --shadow-popover: 0 8px 32px rgba(0, 0, 0, 0.35), 0 2px 8px rgba(0, 0, 0, 0.20);
+}
+
+/* Global Reset & Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global Theme Transition Smoothness */
+body,
+.app-shell,
+.sidebar,
+.topbar,
+.settings-sidebar,
+.settings-form,
+.settings-card,
+.card,
+.modal,
+.modal-content,
+.sidebar__link,
+.settings-tab,
+.topbar__search-wrap,
+h1, h2, h3, h4, h5, h6, p, span, label, a, li, th, td {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Interactive Base Transition */
+.interactive {
+  transition:
+    color        var(--duration-fast) var(--ease-inout),
+    background-color var(--duration-fast) var(--ease-inout),
+    border-color var(--duration-fast) var(--ease-inout),
+    box-shadow   var(--duration-base) var(--ease-out),
+    transform    var(--duration-base) var(--ease-out),
+    opacity      var(--duration-base) var(--ease-inout);
+}
+
+/* Accessible outline on keyboard focus */
+:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+/* ============================================================
+   Button System (DESIGN.md spec)
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid transparent;
+  text-decoration: none;
+
+  /* Default size fallbacks if btn-md/btn-sm is omitted */
+  height: 36px;
+  padding: 0 var(--space-4);
+  font-size: 14px;
+
+  transition:
+    color            var(--duration-fast) var(--ease-inout),
+    background       var(--duration-fast) var(--ease-inout),
+    background-color var(--duration-fast) var(--ease-inout),
+    border-color     var(--duration-fast) var(--ease-inout),
+    box-shadow       var(--duration-base) var(--ease-out),
+    transform        var(--duration-base) var(--ease-out),
+    opacity          var(--duration-base) var(--ease-inout);
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+.btn:disabled,
+.btn[disabled] {
+  background: var(--color-surface-alt) !important;
+  color: var(--color-text-muted) !important;
+  border-color: var(--color-border) !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+/* Sizes */
+.btn-sm { height: 32px; padding: 0 var(--space-3); font-size: 13px; }
+.btn-md { height: 36px; padding: 0 var(--space-4); font-size: 14px; }
+.btn-lg { height: 44px; padding: 0 var(--space-6); font-size: 15px; }
+.btn-save { height: 40px; padding: 0 var(--space-5); font-size: 14px; gap: var(--space-2); }
+.btn-save .btn-save__icon { stroke-width: 2.5; }
+
+/* Primary */
+.btn-primary {
+  background:   var(--color-interactive);
+  color:        var(--color-text-inverse);
+  border-color: var(--color-interactive);
+}
+
+.btn-primary:hover {
+  background:   var(--color-interactive-hover);
+  border-color: var(--color-interactive-hover);
+  box-shadow:   var(--shadow-btn-hover);
+  transform:    translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Secondary (outlined) */
+.btn-secondary {
+  background:   transparent;
+  color:        var(--color-text-primary);
+  border-color: var(--color-border);
+}
+
+.btn-secondary:hover {
+  background:   var(--color-surface-alt);
+  border-color: var(--color-text-muted);
+}
+
+/* Ghost */
+.btn-ghost {
+  background: transparent;
+  color: var(--color-text-secondary);
+}
+
+.btn-ghost:hover {
+  background: var(--color-surface-alt);
+  color: var(--color-text-primary);
+}
+
+/* Destructive */
+.btn-danger {
+  background:   transparent;
+  color:        var(--color-danger);
+  border-color: var(--color-danger);
+}
+
+.btn-danger:hover {
+  background: var(--color-danger-surface);
+}
+
+/* ============================================================
+   Input & Select (DESIGN.md spec)
+   ============================================================ */
+
+.input {
+  display: block;
+  width: 100%;
+  height: 36px;
+  padding: 0 var(--space-3);
+  background:   var(--color-surface);
+  border:       1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family:  var(--font-body);
+  font-size:    14px;
+  color:        var(--color-text-primary);
+  transition:   border-color var(--duration-fast) var(--ease-inout),
+                box-shadow   var(--duration-fast) var(--ease-inout);
+}
+
+.input::placeholder { color: var(--color-text-muted); }
+
+.input:hover { border-color: var(--color-text-muted); }
+
+.input:focus {
+  outline:      none;
+  border-color: var(--color-border-focus);
+  box-shadow:   var(--shadow-focus);
+}
+
+/* ============================================================
+   Chip / Badge (DESIGN.md spec)
+   ============================================================ */
+
+.chip {
+  display:       inline-flex;
+  align-items:   center;
+  height:        24px;
+  padding:       0 var(--space-3);
+  border-radius: var(--radius-full);
+  font-family:   var(--font-body);
+  font-size:     var(--text-caption);
+  font-weight:   500;
+  background:    var(--color-surface-alt);
+  color:         var(--color-text-secondary);
+  border:        1px solid var(--color-border);
+  white-space:   nowrap;
+}
+
+.chip-active {
+  background:   var(--color-interactive);
+  color:        var(--color-text-inverse);
+  border-color: var(--color-interactive);
+}
+
+.chip-success { background: var(--color-success-surface); color: var(--color-success); border-color: transparent; }
+.chip-warning { background: var(--color-warning-surface); color: var(--color-warning); border-color: transparent; }
+.chip-danger  { background: var(--color-danger-surface);  color: var(--color-danger);  border-color: transparent; }
+.chip-info    { background: var(--color-info-surface);    color: var(--color-info);    border-color: transparent; }
+
+@media (prefers-reduced-motion: reduce) {
+  .interactive,
+  [class*="animate-"] {
+    transition: none !important;
+    animation:  none !important;
+  }
+}

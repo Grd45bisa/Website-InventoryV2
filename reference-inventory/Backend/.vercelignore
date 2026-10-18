@@ -1,0 +1,14 @@
+node_modules
+.env
+.env.*
+!.env.example
+.vercel
+*.rar
+*.zip
+*.log
+*.txt
+check_*.js
+fix_*.js
+get_*.js
+query_*.js
+search_*.js

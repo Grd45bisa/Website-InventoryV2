@@ -1,0 +1,221 @@
+/* ============================================================
+   Goods Out Detail Modal
+   ============================================================ */
+
+.go-detail-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--color-overlay);
+  z-index: 2000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--space-6) var(--space-4);
+  overflow-y: auto;
+}
+
+.go-detail-modal {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-popover);
+  width: 100%;
+  max-width: 1100px;
+  height: 92dvh;
+  display: flex;
+  flex-direction: column;
+  animation: go-detail-enter var(--duration-slow) var(--ease-out);
+}
+
+@keyframes go-detail-enter {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.go-detail__ref {
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  color: var(--color-interactive);
+  font-weight: 600;
+}
+
+.go-detail__header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+/* ── Worksheet / Table ───────────────────────────────────── */
+@media (min-width: 768px) {
+  .go-modal__table-desktop {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+  }
+}
+
+.go-modal__table-wrapper {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow-x: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 240px;
+}
+
+.go-modal__table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: var(--text-small);
+  table-layout: fixed;
+  min-width: 660px;
+}
+
+.go-modal__table thead tr {
+  background: var(--color-surface-alt);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.go-modal__table th {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-overline);
+  color: var(--color-text-muted);
+  padding: var(--space-2-5) var(--space-3);
+  text-align: left;
+  position: sticky;
+  top: 0;
+  background: var(--color-surface-alt);
+  z-index: 10;
+}
+
+.go-modal__table tbody {
+  background: var(--color-surface);
+}
+
+.go-modal__table tbody tr {
+  border-bottom: 1px solid var(--color-border-subtle);
+  transition: background var(--duration-fast) var(--ease-inout);
+}
+
+.go-modal__table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.go-modal__table tbody tr:hover {
+  background: var(--color-surface-alt);
+}
+
+.go-modal__table td {
+  padding: var(--space-3);
+  vertical-align: top;
+}
+
+/* ── Mobile Cards View ───────────────────────────────────── */
+.go-modal__cards-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+@media (min-width: 768px) {
+  .go-modal__cards-mobile {
+    display: none;
+  }
+}
+
+.go-line-item__sku-disabled {
+  background: var(--color-surface-alt) !important;
+  cursor: default !important;
+  color: var(--color-text-secondary) !important;
+  border-color: var(--color-border) !important;
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+}
+
+/* ── Table Row Variants ──────────────────────────────────── */
+.go-modal__table .go-detail__tr-serial {
+  background: var(--color-surface-alt);
+}
+
+.go-detail__td-number {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+}
+
+.go-detail__td-name--parent {
+  font-weight: 600;
+  padding-left: var(--space-3);
+}
+
+.go-detail__td-name--serial {
+  padding-left: var(--space-6);
+}
+
+.go-detail__td-sku {
+  color: var(--color-text-muted);
+}
+
+.go-detail__td-qty {
+  text-align: right;
+  font-weight: 600;
+}
+
+/* ── Card Variants ───────────────────────────────────────── */
+.go-line-item-card.go-detail__card--serial {
+  border-left: 3px solid var(--color-success);
+}
+
+.go-line-item-card.go-detail__card--normal {
+  border-left: 1px solid var(--color-border);
+}
+
+.chip-sm {
+  font-size: 10px;
+  padding: 1px var(--space-2);
+}
+
+.go-detail__serial-cell {
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-md);
+}
+
+.go-detail__card-serial-badge {
+  display: inline-block;
+  width: fit-content;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.go-detail__card-product {
+  font-weight: 600;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 576px) {
+  .go-detail-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .go-detail-modal {
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    max-width: 100%;
+    max-height: 95vh;
+    overflow-y: auto;
+  }
+
+  .go-modal__header,
+  .go-modal__body,
+  .go-modal__footer {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+}
+

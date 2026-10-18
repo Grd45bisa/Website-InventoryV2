@@ -1,0 +1,40 @@
+.label-size-picker {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.label-size-picker__icon {
+  position: absolute;
+  left: 8px;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.label-size-picker__select {
+  padding: 0 24px 0 26px !important;
+  height: 30px;
+  font-size: var(--text-caption);
+  font-weight: 600;
+  cursor: pointer;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+}
+
+.label-size-picker__select:hover:not(:disabled) {
+  border-color: var(--color-primary, #2563eb);
+}
+
+.label-size-picker__select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .label-size-picker,
+  .label-size-picker__select {
+    width: 100%;
+  }
+}

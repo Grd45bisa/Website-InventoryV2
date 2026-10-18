@@ -1,0 +1,1662 @@
+[
+  {
+    "id": "0f418167-16bc-4ce9-ab81-03308b4ac034",
+    "product_id": "e980e1eb-97d6-43cb-9ab9-742427df41f1",
+    "serial_number": "BSS110-PK5-270720260002",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.010506+00:00",
+    "updated_at": "2026-09-11T10:28:23.657181+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "c693ce60-9a6c-4148-9033-cf92a3dd72e2",
+    "product_id": "d6e336dd-c0ce-454b-883d-b44042b5619f",
+    "serial_number": "PY090-PK5-270720260003",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.387208+00:00",
+    "updated_at": "2026-09-11T10:28:23.661822+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "ba5c8dfe-3e70-41e1-abb5-3a982f20624d",
+    "product_id": "d6e336dd-c0ce-454b-883d-b44042b5619f",
+    "serial_number": "PY090-PK5-270720260017",
+    "status": "out",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": "c5fd9b56-fa2b-49b6-967a-5eb3b5a89b94",
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.908962+00:00",
+    "updated_at": "2026-09-11T10:28:23.661822+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "cd19dec5-f208-40ab-bd61-18eb4f7f1ab6",
+    "product_id": "d6e336dd-c0ce-454b-883d-b44042b5619f",
+    "serial_number": "PY090-PK5-270720260014",
+    "status": "out",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": "c5fd9b56-fa2b-49b6-967a-5eb3b5a89b94",
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.425957+00:00",
+    "updated_at": "2026-09-11T10:28:23.661822+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "6725d92a-720d-43f0-b783-5df254526639",
+    "product_id": "d6e336dd-c0ce-454b-883d-b44042b5619f",
+    "serial_number": "PY090-PK5-270720260013",
+    "status": "out",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": "c5fd9b56-fa2b-49b6-967a-5eb3b5a89b94",
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.999385+00:00",
+    "updated_at": "2026-09-11T10:28:23.661822+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "56963337-efc5-47e3-b000-8600525d788e",
+    "product_id": "d6e336dd-c0ce-454b-883d-b44042b5619f",
+    "serial_number": "PY090-PK5-270720260012",
+    "status": "out",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": "c5fd9b56-fa2b-49b6-967a-5eb3b5a89b94",
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.295108+00:00",
+    "updated_at": "2026-09-11T10:28:23.661822+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "9ec6a5fa-50bc-4486-a8f1-25bd3d23f871",
+    "product_id": "d6e336dd-c0ce-454b-883d-b44042b5619f",
+    "serial_number": "PY090-PK5-270720260011",
+    "status": "out",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": "c5fd9b56-fa2b-49b6-967a-5eb3b5a89b94",
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.453529+00:00",
+    "updated_at": "2026-09-11T10:28:23.661822+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "8e7f2f0f-1b09-4260-b5ef-55f0ecb955f8",
+    "product_id": "d6e336dd-c0ce-454b-883d-b44042b5619f",
+    "serial_number": "PY090-PK5-270720260005",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.889734+00:00",
+    "updated_at": "2026-09-11T10:28:23.661822+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "9d1158fa-c1c5-4db9-a82c-98586e5f3e11",
+    "product_id": "d6e336dd-c0ce-454b-883d-b44042b5619f",
+    "serial_number": "PY090-PK5-270720260016",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.946653+00:00",
+    "updated_at": "2026-09-11T10:28:23.661822+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "30934fcc-e54e-4435-8f8d-3a6c084ba542",
+    "product_id": "e2aecbd0-68c7-4c44-bde3-f1e97ac9d812",
+    "serial_number": "BPY120-PK5-270720260002",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.955401+00:00",
+    "updated_at": "2026-09-11T10:28:23.685367+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "ae5e319b-f821-4ead-8b31-47f67201a477",
+    "product_id": "d6e336dd-c0ce-454b-883d-b44042b5619f",
+    "serial_number": "PY090-PK5-270720260004",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.975048+00:00",
+    "updated_at": "2026-09-11T10:28:23.661822+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "ec6c9b1a-3cea-4f17-986c-0b9ae3fde7e4",
+    "product_id": "e2aecbd0-68c7-4c44-bde3-f1e97ac9d812",
+    "serial_number": "BPY120-PK5-270720260003",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:55.016447+00:00",
+    "updated_at": "2026-09-11T10:28:23.685367+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "22434b0e-8524-4ec3-b980-92b12e43e683",
+    "product_id": "4f4d0f1b-1948-48f8-a75f-49e4b9faad65",
+    "serial_number": "PY110-PK5-270720260002",
+    "status": "out",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": "c5fd9b56-fa2b-49b6-967a-5eb3b5a89b94",
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:55.068211+00:00",
+    "updated_at": "2026-09-11T10:28:23.685549+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "55b31a9f-993c-4b22-82df-41b730289571",
+    "product_id": "c4a7a0ea-7a01-4fb1-af17-53534dfc71b0",
+    "serial_number": "HS90-PK5-270720260008",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:56.165303+00:00",
+    "updated_at": "2026-09-11T10:28:23.690686+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "1cdabb64-92bd-47e4-8806-575ef0772063",
+    "product_id": "5805425c-9c4e-4aed-9a8d-05dc8588967f",
+    "serial_number": "BSS90-PK5-270720260002",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:55.225529+00:00",
+    "updated_at": "2026-09-11T10:28:23.658482+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "77bd428b-04bb-4dfe-a126-9d5719b3efd2",
+    "product_id": "d26952d4-bcba-4ab1-aaba-a525a0aa5236",
+    "serial_number": "BBTH125-PK5-270720260001",
+    "status": "out",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": "a85482cb-572c-400c-878c-b869c9b29a0c",
+    "goods_out_item_id": "563d5000-563d-4604-b159-b9426d95b020",
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:55.0685+00:00",
+    "updated_at": "2026-09-11T10:28:23.661055+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "d2615d29-4397-4ca7-a2a8-f093374e0887",
+    "product_id": "4f4d0f1b-1948-48f8-a75f-49e4b9faad65",
+    "serial_number": "PY110-PK5-270720260008",
+    "status": "out",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": "c5fd9b56-fa2b-49b6-967a-5eb3b5a89b94",
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:55.460663+00:00",
+    "updated_at": "2026-09-11T10:28:23.685549+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "9d714081-4313-48ee-bcfc-42d20e4915c1",
+    "product_id": "d6e336dd-c0ce-454b-883d-b44042b5619f",
+    "serial_number": "PY090-PK5-270720260009",
+    "status": "out",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": "c5fd9b56-fa2b-49b6-967a-5eb3b5a89b94",
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.400752+00:00",
+    "updated_at": "2026-09-11T10:28:23.661822+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "d4895db7-1794-4085-96e7-aa1986dcbd8f",
+    "product_id": "4f4d0f1b-1948-48f8-a75f-49e4b9faad65",
+    "serial_number": "PY110-PK5-270720260005",
+    "status": "out",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": "c5fd9b56-fa2b-49b6-967a-5eb3b5a89b94",
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.462129+00:00",
+    "updated_at": "2026-09-11T10:28:23.685549+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "1be9fb9e-9e54-4825-b972-26aafa612f31",
+    "product_id": "d6e336dd-c0ce-454b-883d-b44042b5619f",
+    "serial_number": "PY090-PK5-270720260018",
+    "status": "out",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": "c5fd9b56-fa2b-49b6-967a-5eb3b5a89b94",
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.53005+00:00",
+    "updated_at": "2026-09-11T10:28:23.661822+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "93ada4c4-afb1-4baa-a9b1-b0cae4467182",
+    "product_id": "c4a7a0ea-7a01-4fb1-af17-53534dfc71b0",
+    "serial_number": "HS90-PK5-270720260006",
+    "status": "out",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": "a85482cb-572c-400c-878c-b869c9b29a0c",
+    "goods_out_item_id": "3465bd53-9d4c-4de6-a8b3-c8c54a85ce0d",
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.903872+00:00",
+    "updated_at": "2026-09-11T10:28:23.690686+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "a411ae87-1a44-46ea-a999-edfb0c855fa2",
+    "product_id": "bd067e1c-206f-4fd4-85de-1ee4a2f9510c",
+    "serial_number": "HS110-PK5-270720260001",
+    "status": "out",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": "a85482cb-572c-400c-878c-b869c9b29a0c",
+    "goods_out_item_id": "8970823d-5ad0-44e8-aabc-8d2564a1606d",
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.646615+00:00",
+    "updated_at": "2026-09-11T10:28:23.660101+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "28a5a0d1-ab9a-4fd6-a59c-572a5772abea",
+    "product_id": "e980e1eb-97d6-43cb-9ab9-742427df41f1",
+    "serial_number": "BSS110-PK5-270720260004",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.73033+00:00",
+    "updated_at": "2026-09-11T10:28:23.657181+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "5521c0e7-3b2d-4812-af89-5d2ab29b8822",
+    "product_id": "e2aecbd0-68c7-4c44-bde3-f1e97ac9d812",
+    "serial_number": "BPY120-PK5-270720260008",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.009202+00:00",
+    "updated_at": "2026-09-11T10:28:23.685367+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "e1e56b68-a014-4eb1-8b52-27926a5bfb0f",
+    "product_id": "e2aecbd0-68c7-4c44-bde3-f1e97ac9d812",
+    "serial_number": "BPY120-PK5-270720260007",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.667778+00:00",
+    "updated_at": "2026-09-11T10:28:23.685367+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "c489e302-d87a-4d7f-8291-04a504d93bfe",
+    "product_id": "c4a7a0ea-7a01-4fb1-af17-53534dfc71b0",
+    "serial_number": "HS90-PK5-270720260004",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.32026+00:00",
+    "updated_at": "2026-09-11T10:28:23.690686+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "cd32908e-20a6-4d4e-9ba9-5e7f6f9eb19c",
+    "product_id": "4f4d0f1b-1948-48f8-a75f-49e4b9faad65",
+    "serial_number": "PY110-PK5-270720260010",
+    "status": "out",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": "c5fd9b56-fa2b-49b6-967a-5eb3b5a89b94",
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.976041+00:00",
+    "updated_at": "2026-09-11T10:28:23.685549+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "b72f581f-a765-4ae6-954d-200fe219a71a",
+    "product_id": "e2aecbd0-68c7-4c44-bde3-f1e97ac9d812",
+    "serial_number": "BPY120-PK5-270720260009",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.307603+00:00",
+    "updated_at": "2026-09-11T10:28:23.685367+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "3da2016f-a706-44eb-84d3-27093e747ef4",
+    "product_id": "e2aecbd0-68c7-4c44-bde3-f1e97ac9d812",
+    "serial_number": "BPY120-PK5-270720260001",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.3218+00:00",
+    "updated_at": "2026-09-11T10:28:23.685367+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "890c3d95-d242-4e49-a93d-fd6c78e0f795",
+    "product_id": "4f4d0f1b-1948-48f8-a75f-49e4b9faad65",
+    "serial_number": "PY110-PK5-270720260007",
+    "status": "out",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": "c5fd9b56-fa2b-49b6-967a-5eb3b5a89b94",
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.49744+00:00",
+    "updated_at": "2026-09-11T10:28:23.685549+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "2c90dc7f-d78d-4d23-a141-904f614e32ba",
+    "product_id": "4f4d0f1b-1948-48f8-a75f-49e4b9faad65",
+    "serial_number": "PY110-PK5-270720260003",
+    "status": "out",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": "c5fd9b56-fa2b-49b6-967a-5eb3b5a89b94",
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.965284+00:00",
+    "updated_at": "2026-09-11T10:28:23.685549+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "0a211d72-8fac-4739-9603-8dd24db9292f",
+    "product_id": "4f4d0f1b-1948-48f8-a75f-49e4b9faad65",
+    "serial_number": "PY110-PK5-270720260006",
+    "status": "out",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": "c5fd9b56-fa2b-49b6-967a-5eb3b5a89b94",
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.63456+00:00",
+    "updated_at": "2026-09-11T10:28:23.685549+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "14da0bdd-f70e-4c1a-8d1d-4de8c052db7f",
+    "product_id": "4f4d0f1b-1948-48f8-a75f-49e4b9faad65",
+    "serial_number": "PY110-PK5-270720260001",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.069306+00:00",
+    "updated_at": "2026-09-11T10:28:23.685549+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "cd83feec-5d08-4901-97df-d3d3fbe89220",
+    "product_id": "e2aecbd0-68c7-4c44-bde3-f1e97ac9d812",
+    "serial_number": "BPY120-PK5-270720260004",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.671506+00:00",
+    "updated_at": "2026-09-11T10:28:23.685367+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "325649a1-7b47-4a68-9afe-71fd4625a097",
+    "product_id": "c4a7a0ea-7a01-4fb1-af17-53534dfc71b0",
+    "serial_number": "HS90-PK5-270720260001",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.851943+00:00",
+    "updated_at": "2026-09-11T10:28:23.690686+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "710fd197-a5c4-4051-8a99-1a518e16889f",
+    "product_id": "c4a7a0ea-7a01-4fb1-af17-53534dfc71b0",
+    "serial_number": "HS90-PK5-270720260005",
+    "status": "out",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": "a85482cb-572c-400c-878c-b869c9b29a0c",
+    "goods_out_item_id": "b2f3e6bf-d281-470e-a113-a2b8ace4b0fa",
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.279667+00:00",
+    "updated_at": "2026-09-11T10:28:23.690686+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "e2de72b3-db7c-4709-b2aa-8a87d9f7f567",
+    "product_id": "c4a7a0ea-7a01-4fb1-af17-53534dfc71b0",
+    "serial_number": "HS90-PK5-270720260003",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.096792+00:00",
+    "updated_at": "2026-09-11T10:28:23.690686+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "05ece793-ccda-4326-97b6-4bcc37dfb56a",
+    "product_id": "c4a7a0ea-7a01-4fb1-af17-53534dfc71b0",
+    "serial_number": "HS90-PK5-270720260007",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.159819+00:00",
+    "updated_at": "2026-09-11T10:28:23.690686+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "b89b61cc-098e-4b4a-8cd4-97f06fd891d5",
+    "product_id": "5805425c-9c4e-4aed-9a8d-05dc8588967f",
+    "serial_number": "BSS90-PK5-270720260001",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.887159+00:00",
+    "updated_at": "2026-09-11T10:28:23.658482+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "203e65f7-fee6-4b82-a42d-273cc2867dce",
+    "product_id": "e980e1eb-97d6-43cb-9ab9-742427df41f1",
+    "serial_number": "BSS110-PK5-270720260003",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.719046+00:00",
+    "updated_at": "2026-09-11T10:28:23.657181+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "a5706821-e816-4e00-a5b9-80608c5ac2a4",
+    "product_id": "4f4d0f1b-1948-48f8-a75f-49e4b9faad65",
+    "serial_number": "PY110-PK5-270720260004",
+    "status": "out",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": "c5fd9b56-fa2b-49b6-967a-5eb3b5a89b94",
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.0008+00:00",
+    "updated_at": "2026-09-11T10:28:23.685549+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "fc302888-4f4c-48c7-87ca-f7a81fd3d613",
+    "product_id": "4f4d0f1b-1948-48f8-a75f-49e4b9faad65",
+    "serial_number": "PY110-PK5-270720260009",
+    "status": "out",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": "c5fd9b56-fa2b-49b6-967a-5eb3b5a89b94",
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.425699+00:00",
+    "updated_at": "2026-09-11T10:28:23.685549+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "a159faf3-2edd-4792-acce-931cad25d2b8",
+    "product_id": "e2aecbd0-68c7-4c44-bde3-f1e97ac9d812",
+    "serial_number": "BPY120-PK5-270720260005",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.745753+00:00",
+    "updated_at": "2026-09-11T10:28:23.685367+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "8b715ad7-39c2-403f-85a9-4a1def3dfbcc",
+    "product_id": "e2aecbd0-68c7-4c44-bde3-f1e97ac9d812",
+    "serial_number": "BPY120-PK5-270720260006",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.746177+00:00",
+    "updated_at": "2026-09-11T10:28:23.685367+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "c83509be-47f1-4647-910d-beced9fa048d",
+    "product_id": "e980e1eb-97d6-43cb-9ab9-742427df41f1",
+    "serial_number": "BSS110-PK5-270720260014",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.313716+00:00",
+    "updated_at": "2026-09-11T10:28:23.657181+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "770e8d8e-d291-4f3b-b332-553bd23d0b54",
+    "product_id": "c4a7a0ea-7a01-4fb1-af17-53534dfc71b0",
+    "serial_number": "HS90-PK5-270720260002",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.355631+00:00",
+    "updated_at": "2026-09-11T10:28:23.690686+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "cfbd81fd-7a09-4ce4-9841-511b39834fa9",
+    "product_id": "e980e1eb-97d6-43cb-9ab9-742427df41f1",
+    "serial_number": "BSS110-PK5-270720260019",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.896808+00:00",
+    "updated_at": "2026-09-11T10:28:23.657181+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "acd49b7a-deb5-4dfb-ac73-ac36e9ed5b90",
+    "product_id": "bd067e1c-206f-4fd4-85de-1ee4a2f9510c",
+    "serial_number": "HS110-PK5-270720260002",
+    "status": "out",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": "a85482cb-572c-400c-878c-b869c9b29a0c",
+    "goods_out_item_id": "8fc22324-cf69-40bc-a519-0f93e12deb5d",
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.597922+00:00",
+    "updated_at": "2026-09-11T10:28:23.660101+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "eff6591c-463b-4e03-bb1c-10112568e23c",
+    "product_id": "8637b892-d535-44b4-81f8-e8da781734f9",
+    "serial_number": "BBYT-90-PK5-270720260003",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.135609+00:00",
+    "updated_at": "2026-09-11T10:28:23.659929+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "d0953081-e384-4c4e-a533-fd5baa056db0",
+    "product_id": "5805425c-9c4e-4aed-9a8d-05dc8588967f",
+    "serial_number": "BSS90-PK5-270720260010",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.669107+00:00",
+    "updated_at": "2026-09-11T10:28:23.658482+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "aba0dcdf-681b-4ace-ac39-2d2d895548c8",
+    "product_id": "d26952d4-bcba-4ab1-aaba-a525a0aa5236",
+    "serial_number": "BBTH125-PK5-270720260002",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.941164+00:00",
+    "updated_at": "2026-09-11T10:28:23.661055+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "ab968604-4333-4e21-b0fb-9eded61020e5",
+    "product_id": "d6e336dd-c0ce-454b-883d-b44042b5619f",
+    "serial_number": "PY090-PK5-270720260007",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.441766+00:00",
+    "updated_at": "2026-09-11T10:28:23.661822+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "f478c931-c62e-429f-9fcb-7e7971acf57b",
+    "product_id": "d6e336dd-c0ce-454b-883d-b44042b5619f",
+    "serial_number": "PY090-PK5-270720260015",
+    "status": "out",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": "c5fd9b56-fa2b-49b6-967a-5eb3b5a89b94",
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.162049+00:00",
+    "updated_at": "2026-09-11T10:28:23.661822+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "99d08bd2-d1f0-4df6-8300-4bba502c04a8",
+    "product_id": "d6e336dd-c0ce-454b-883d-b44042b5619f",
+    "serial_number": "PY090-PK5-270720260010",
+    "status": "out",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": "c5fd9b56-fa2b-49b6-967a-5eb3b5a89b94",
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.273627+00:00",
+    "updated_at": "2026-09-11T10:28:23.661822+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "7daca2aa-6d7a-44bb-bc64-6252fac17e27",
+    "product_id": "bd067e1c-206f-4fd4-85de-1ee4a2f9510c",
+    "serial_number": "HS110-PK5-270720260004",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.334296+00:00",
+    "updated_at": "2026-09-11T10:28:23.660101+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "4fd42362-8d40-4c48-82d2-2d68e9a48aac",
+    "product_id": "bd067e1c-206f-4fd4-85de-1ee4a2f9510c",
+    "serial_number": "HS110-PK5-270720260003",
+    "status": "out",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": "02844c75-712c-4b81-9000-dad524038463",
+    "goods_out_item_id": "4a8aae2c-b083-4dbe-82c5-d760627b7920",
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.491742+00:00",
+    "updated_at": "2026-09-11T10:28:23.660101+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "851f348e-15e0-4c9a-b3b1-ab7eaa5ced9b",
+    "product_id": "5805425c-9c4e-4aed-9a8d-05dc8588967f",
+    "serial_number": "BSS90-PK5-270720260003",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.245796+00:00",
+    "updated_at": "2026-09-11T10:28:23.658482+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "11a2759e-63f5-493e-87ec-6c08977d51ff",
+    "product_id": "5805425c-9c4e-4aed-9a8d-05dc8588967f",
+    "serial_number": "BSS90-PK5-270720260006",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.381375+00:00",
+    "updated_at": "2026-09-11T10:28:23.658482+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "c1a01095-a6bb-445a-806f-7758696a89e1",
+    "product_id": "5805425c-9c4e-4aed-9a8d-05dc8588967f",
+    "serial_number": "BSS90-PK5-270720260009",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.264475+00:00",
+    "updated_at": "2026-09-11T10:28:23.658482+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "1ee72178-c883-4fc6-9ba0-3c46ab290a98",
+    "product_id": "8637b892-d535-44b4-81f8-e8da781734f9",
+    "serial_number": "BBYT-90-PK5-270720260004",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.912462+00:00",
+    "updated_at": "2026-09-11T10:28:23.659929+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "339ba15c-8ea8-4dac-b1c5-6607876096c3",
+    "product_id": "8637b892-d535-44b4-81f8-e8da781734f9",
+    "serial_number": "BBYT-90-PK5-270720260002",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.325467+00:00",
+    "updated_at": "2026-09-11T10:28:23.659929+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "da83e260-d1f0-4e9f-bde9-41f6961c7abd",
+    "product_id": "8637b892-d535-44b4-81f8-e8da781734f9",
+    "serial_number": "BBYT-90-PK5-270720260001",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.689536+00:00",
+    "updated_at": "2026-09-11T10:28:23.659929+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "5545343c-6f80-404e-a92b-b80c4640b599",
+    "product_id": "5805425c-9c4e-4aed-9a8d-05dc8588967f",
+    "serial_number": "BSS90-PK5-270720260007",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.499777+00:00",
+    "updated_at": "2026-09-11T10:28:23.658482+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "b38c5aef-4c0b-4631-aa89-389c0e4621e9",
+    "product_id": "5805425c-9c4e-4aed-9a8d-05dc8588967f",
+    "serial_number": "BSS90-PK5-270720260008",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.1756+00:00",
+    "updated_at": "2026-09-11T10:28:23.658482+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "b02c7be6-d0ee-4a24-8f4b-29c1ce0c1ae2",
+    "product_id": "5805425c-9c4e-4aed-9a8d-05dc8588967f",
+    "serial_number": "BSS90-PK5-270720260005",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.304354+00:00",
+    "updated_at": "2026-09-11T10:28:23.658482+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "75ad6ad5-6313-45aa-81f0-65c2f8baf62d",
+    "product_id": "5805425c-9c4e-4aed-9a8d-05dc8588967f",
+    "serial_number": "BSS90-PK5-270720260004",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.695161+00:00",
+    "updated_at": "2026-09-11T10:28:23.658482+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "386a7d45-db3d-4ebf-9631-97ee1773d99b",
+    "product_id": "e980e1eb-97d6-43cb-9ab9-742427df41f1",
+    "serial_number": "BSS110-PK5-270720260015",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.46599+00:00",
+    "updated_at": "2026-09-11T10:28:23.657181+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "c0053c56-a48f-4bf7-8a8c-584b9a95f468",
+    "product_id": "e980e1eb-97d6-43cb-9ab9-742427df41f1",
+    "serial_number": "BSS110-PK5-270720260016",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.592462+00:00",
+    "updated_at": "2026-09-11T10:28:23.657181+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "f033b5e1-a7bf-49a7-96f4-c539f0d4332c",
+    "product_id": "e980e1eb-97d6-43cb-9ab9-742427df41f1",
+    "serial_number": "BSS110-PK5-270720260008",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.818513+00:00",
+    "updated_at": "2026-09-11T10:28:23.657181+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "4cf3a9d1-2ede-43da-bb69-b291d581aa9b",
+    "product_id": "e980e1eb-97d6-43cb-9ab9-742427df41f1",
+    "serial_number": "BSS110-PK5-270720260006",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.007047+00:00",
+    "updated_at": "2026-09-11T10:28:23.657181+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "b769d7be-a8a1-4ead-9dfb-874927fd6198",
+    "product_id": "e980e1eb-97d6-43cb-9ab9-742427df41f1",
+    "serial_number": "BSS110-PK5-270720260013",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.079247+00:00",
+    "updated_at": "2026-09-11T10:28:23.657181+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "cacabb68-053a-4eeb-aff7-933087a24060",
+    "product_id": "e980e1eb-97d6-43cb-9ab9-742427df41f1",
+    "serial_number": "BSS110-PK5-270720260009",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.288908+00:00",
+    "updated_at": "2026-09-11T10:28:23.657181+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "13624c42-8da1-43fe-b2c1-a0048dcaddee",
+    "product_id": "e980e1eb-97d6-43cb-9ab9-742427df41f1",
+    "serial_number": "BSS110-PK5-270720260005",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.458662+00:00",
+    "updated_at": "2026-09-11T10:28:23.657181+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "32dfe1ad-8c40-41aa-9a9c-63b9c0268d6e",
+    "product_id": "e980e1eb-97d6-43cb-9ab9-742427df41f1",
+    "serial_number": "BSS110-PK5-270720260001",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.136272+00:00",
+    "updated_at": "2026-09-11T10:28:23.657181+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "85f27cb8-6980-4c3c-b46a-bcff1d1cbfa0",
+    "product_id": "e980e1eb-97d6-43cb-9ab9-742427df41f1",
+    "serial_number": "BSS110-PK5-270720260007",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.535467+00:00",
+    "updated_at": "2026-09-11T10:28:23.657181+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "0e32a613-1f45-4379-a960-8327ee29d7f9",
+    "product_id": "e980e1eb-97d6-43cb-9ab9-742427df41f1",
+    "serial_number": "BSS110-PK5-270720260010",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.587081+00:00",
+    "updated_at": "2026-09-11T10:28:23.657181+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "2b53139d-8916-4b77-acbe-1bca25960aae",
+    "product_id": "e980e1eb-97d6-43cb-9ab9-742427df41f1",
+    "serial_number": "BSS110-PK5-270720260012",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.655809+00:00",
+    "updated_at": "2026-09-11T10:28:23.657181+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "4cb1a090-8c2a-4aa3-b141-2779568bdf44",
+    "product_id": "e980e1eb-97d6-43cb-9ab9-742427df41f1",
+    "serial_number": "BSS110-PK5-270720260011",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.222775+00:00",
+    "updated_at": "2026-09-11T10:28:23.657181+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "d691df1d-fa78-4c8e-ad74-aa54409dd9e5",
+    "product_id": "e980e1eb-97d6-43cb-9ab9-742427df41f1",
+    "serial_number": "BSS110-PK5-270720260017",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.277724+00:00",
+    "updated_at": "2026-09-11T10:28:23.657181+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "3be3e97f-d68a-4472-bf35-52a3c6ed5940",
+    "product_id": "e980e1eb-97d6-43cb-9ab9-742427df41f1",
+    "serial_number": "BSS110-PK5-270720260018",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.35878+00:00",
+    "updated_at": "2026-09-11T10:28:23.657181+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "f3de1821-7b54-4026-8dec-5464610a53df",
+    "product_id": "e980e1eb-97d6-43cb-9ab9-742427df41f1",
+    "serial_number": "BSS110-PK5-270720260020",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:54.366485+00:00",
+    "updated_at": "2026-09-11T10:28:23.657181+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "51caecfe-5939-4fe1-b2a2-21caab963a69",
+    "product_id": "d6e336dd-c0ce-454b-883d-b44042b5619f",
+    "serial_number": "PY090-PK5-270720260008",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.636942+00:00",
+    "updated_at": "2026-09-11T10:28:23.661822+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  },
+  {
+    "id": "ca972777-67ce-4a62-9b50-9a04e605fc78",
+    "product_id": "d6e336dd-c0ce-454b-883d-b44042b5619f",
+    "serial_number": "PY090-PK5-270720260006",
+    "status": "available",
+    "goods_in_document_id": "3d8f3ff6-8405-4c35-b4bb-9f5095e79e64",
+    "goods_in_item_id": null,
+    "goods_out_document_id": null,
+    "goods_out_item_id": null,
+    "metadata": {
+      "source": "goods_in_completion",
+      "unitQty": 60,
+      "serialUnit": "pack"
+    },
+    "created_by": "7c1ad376-fadf-4cdc-bec4-5d8641d34b9e",
+    "owner_id": "70338df1-219d-455c-9526-8d072e7fdcb6",
+    "created_at": "2026-08-20T06:32:53.937412+00:00",
+    "updated_at": "2026-09-11T10:28:23.661822+00:00",
+    "warehouse_id": "ab68abed-b74e-40f8-83dc-eff8998fa762"
+  }
+]

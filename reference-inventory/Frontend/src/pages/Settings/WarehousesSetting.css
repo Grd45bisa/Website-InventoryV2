@@ -1,0 +1,217 @@
+/* ── Warehouses Management Settings Styles (Spacious, Clear & High Contrast) ─────────────────────────────────── */
+.warehouses-setting {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6, 24px);
+  width: 100%;
+}
+
+.warehouses-setting__banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  background: var(--color-surface-alt, #f8fafc);
+  border-radius: var(--radius-xl, 12px);
+  border: 1px solid var(--color-border);
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.warehouses-setting__banner strong {
+  color: var(--color-text-primary);
+  font-size: 14.5px;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.warehouses-setting__card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl, 14px);
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.warehouses-setting__table-wrap {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.warehouses-setting__table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+
+.warehouses-setting__table th {
+  background: var(--color-surface-alt, #f8fafc);
+  color: var(--color-text-secondary, #475569);
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.warehouses-setting__table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--color-border-subtle, #f1f5f9);
+  color: var(--color-text-primary);
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+.warehouses-setting__table tr:last-child td {
+  border-bottom: none;
+}
+
+.warehouses-setting__table tr:hover td {
+  background: var(--color-surface-alt, #f8fafc);
+}
+
+/* Warehouse Name & Icon */
+.wh-cell {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.wh-avatar {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: var(--radius-lg, 10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.wh-avatar--active {
+  background: var(--color-interactive, #4f46e5);
+  color: #ffffff;
+}
+
+.wh-avatar--inactive {
+  background: var(--color-interactive-light, #eef2ff);
+  color: var(--color-interactive, #4f46e5);
+}
+
+.wh-cell__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.wh-cell__name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.wh-cell__sub {
+  font-size: 12.5px;
+  color: var(--color-text-muted);
+}
+
+/* Code Badge */
+.wh-code-badge {
+  font-family: var(--font-mono, monospace);
+  font-size: 13px;
+  font-weight: 700;
+  background: var(--color-surface-alt, #f1f5f9);
+  border: 1px solid var(--color-border);
+  padding: 4px 10px;
+  border-radius: var(--radius-md, 6px);
+  color: var(--color-text-secondary);
+  display: inline-block;
+  letter-spacing: 0.5px;
+}
+
+/* Active Status Pill */
+.wh-status-active {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  background: var(--color-success-surface, #ecfdf5);
+  color: var(--color-success, #059669);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  white-space: nowrap;
+}
+
+.wh-btn-select {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 6px 12px;
+  height: 32px;
+  border-radius: var(--radius-md, 6px);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  white-space: nowrap;
+}
+
+.wh-btn-select:hover {
+  background: var(--color-interactive-light, #eef2ff);
+  border-color: var(--color-interactive, #4f46e5);
+  color: var(--color-interactive, #4f46e5);
+}
+
+/* Action Buttons (High Contrast, Large & Clear) */
+.wh-actions-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wh-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-md, 8px);
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.wh-action-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.wh-action-btn:hover {
+  background: var(--color-surface-alt, #f1f5f9);
+  color: var(--color-text-primary);
+  border-color: var(--color-text-secondary);
+  transform: translateY(-1px);
+}
+
+.wh-action-btn--delete {
+  color: var(--color-danger, #ef4444);
+  border-color: rgba(239, 68, 68, 0.25);
+  background: #fff;
+}
+
+.wh-action-btn--delete:hover {
+  background: var(--color-danger-surface, #fef2f2);
+  border-color: var(--color-danger, #ef4444);
+  color: var(--color-danger, #dc2626);
+}

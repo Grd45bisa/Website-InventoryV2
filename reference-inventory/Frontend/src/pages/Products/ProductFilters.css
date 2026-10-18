@@ -1,0 +1,190 @@
+.product-filters {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+}
+
+.product-filters__search-wrapper {
+  position: relative;
+  width: 280px;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  height: 40px;
+  padding: 0 var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: text;
+  transition: border-color var(--duration-fast) var(--ease-inout),
+              box-shadow var(--duration-fast) var(--ease-inout);
+}
+
+.product-filters__search-wrapper:focus-within {
+  border-color: var(--color-border-focus);
+  box-shadow: var(--shadow-focus);
+}
+
+.product-filters__search-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.product-filters__search-input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  border: none;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-text-primary);
+  outline: none;
+  padding: 0;
+}
+
+.product-filters__search-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.product-filters__search-shortcut {
+  margin-left: auto;
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--color-text-muted);
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xs);
+  padding: 2px 6px;
+  flex-shrink: 0;
+}
+
+.product-filters__dropdowns {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.product-filters__select-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.product-filters__select {
+  width: 160px;
+  height: 40px;
+  padding: 0 var(--space-8) 0 var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: 500;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  appearance: none;
+  outline: none;
+  transition: border-color var(--duration-fast) var(--ease-inout),
+              box-shadow var(--duration-fast) var(--ease-inout);
+}
+
+.product-filters__select:hover {
+  border-color: var(--color-text-muted);
+}
+
+.product-filters__select:focus {
+  border-color: var(--color-border-focus);
+  box-shadow: var(--shadow-focus);
+}
+
+.product-filters__select-chevron {
+  position: absolute;
+  right: var(--space-3);
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  transition: color var(--duration-fast) var(--ease-inout);
+}
+
+.product-filters__select-wrap:focus-within .product-filters__select-chevron {
+  color: var(--color-interactive);
+}
+
+.product-filters__select--unit {
+  width: 120px;
+}
+
+.product-filters__toggle-group {
+  margin-left: auto;
+  display: flex;
+  gap: var(--space-1);
+  background: var(--color-surface-alt);
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+.product-filters__toggle-btn {
+  min-width: 82px;
+  justify-content: center;
+}
+@media (max-width: 992px) {
+  .product-filters {
+    flex-wrap: wrap;
+  }
+
+  .product-filters__search-wrapper {
+    width: auto;
+    flex-grow: 1;
+  }
+
+  .product-filters__search-shortcut {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .product-filters {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-2);
+  }
+
+  .product-filters__search-wrapper {
+    width: 100%;
+  }
+
+  .product-filters__dropdowns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    width: 100%;
+  }
+
+  .product-filters__select-wrap {
+    flex: 1 1 calc(50% - var(--space-2));
+    min-width: 130px;
+  }
+
+  .product-filters__select-wrap--unit {
+    flex: 1 1 100%;
+  }
+
+  .product-filters__select {
+    width: 100%;
+  }
+
+  .product-filters__select--unit {
+    width: 100%;
+  }
+
+  .product-filters__toggle-group {
+    display: none;
+  }
+}

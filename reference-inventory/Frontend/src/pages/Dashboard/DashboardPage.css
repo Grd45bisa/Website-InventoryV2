@@ -1,0 +1,166 @@
+.dashboard-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.dashboard-page__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-5);
+}
+
+.dashboard-page__welcome {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.dashboard-page__greeting {
+  font-family: var(--font-display);
+  font-size: var(--text-subhead);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: var(--tracking-section);
+}
+
+.dashboard-page__username {
+  color: var(--color-interactive);
+}
+
+.dashboard-page__subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-text-secondary);
+}
+
+.dashboard-page__date-badge {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: var(--space-2) var(--space-4);
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.dashboard-page__date {
+  font-size: var(--text-caption);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+/* ── Split Layout Grid ─────────────────────────────────────── */
+.dashboard-page__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+@media (min-width: 993px) {
+  .dashboard-page__layout {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.dashboard-page__main-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.dashboard-page__sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* ── System Status Card ────────────────────────────────────── */
+.dashboard-system-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.01);
+}
+
+.dashboard-system-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-body);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.dashboard-system-card__divider {
+  height: 1px;
+  background: var(--color-border-subtle);
+}
+
+.dashboard-system-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2-5);
+}
+
+.dashboard-system-card__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.dashboard-system-card__key {
+  font-size: var(--text-caption);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.dashboard-system-card__value {
+  font-size: var(--text-caption);
+  color: var(--color-text-primary);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.dashboard-system-card__value--status {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1-5);
+  color: var(--color-success);
+  flex-shrink: 0;
+}
+
+.dashboard-system-card__status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--color-success);
+  animation: pulse-dot 2s infinite var(--ease-inout);
+}
+
+@keyframes pulse-dot {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 5px rgba(34, 197, 94, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}

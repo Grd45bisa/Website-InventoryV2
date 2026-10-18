@@ -1,0 +1,350 @@
+/* ─── Wrapper ─────────────────────────────── */
+.indo-date-input {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 0 !important;
+  width: 100% !important;
+  height: 36px !important;
+  min-height: 36px !important;
+  max-height: 36px !important;
+  padding: 0 10px !important;
+  box-sizing: border-box !important;
+  background: var(--color-surface) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-sm, 6px) !important;
+  cursor: text;
+  transition:
+    border-color var(--duration-fast, 120ms) var(--ease-inout, ease),
+    box-shadow var(--duration-fast, 120ms) var(--ease-inout, ease),
+    background-color 0.3s ease;
+}
+
+.indo-date-input:hover {
+  border-color: var(--color-text-muted) !important;
+}
+
+.indo-date-input:focus-within,
+.indo-date-input.is-open {
+  outline: none !important;
+  border-color: var(--color-border-focus, var(--color-interactive)) !important;
+  box-shadow: var(--shadow-focus, 0 0 0 3px var(--color-interactive-ring)) !important;
+}
+
+/* ─── Text segments ───────────────────────── */
+.indo-date-input__fields {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  gap: 0 !important;
+}
+
+.indo-date-input__seg {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 26px !important;
+  height: 100% !important;
+  text-align: center !important;
+  font-size: 13.5px !important;
+  font-family: inherit !important;
+  color: var(--color-text-primary) !important;
+  caret-color: var(--color-interactive) !important;
+}
+
+.indo-date-input__seg--year {
+  width: 44px !important;
+}
+
+.indo-date-input__seg::placeholder {
+  color: var(--color-text-muted) !important;
+  opacity: 0.8 !important;
+}
+
+.indo-date-input__sep {
+  color: var(--color-text-muted) !important;
+  font-size: 13px !important;
+  padding: 0 2px !important;
+  user-select: none !important;
+  opacity: 0.8 !important;
+  line-height: 1 !important;
+}
+
+/* ─── Right-side action buttons ───────────── */
+.indo-date-input__actions {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  flex-shrink: 0 !important;
+  margin-left: auto !important;
+  height: 100% !important;
+  gap: 3px !important;
+}
+
+.indo-date-input__clear {
+  background: none !important;
+  border: none !important;
+  outline: none !important;
+  padding: 0 4px !important;
+  height: 24px !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
+  color: var(--color-text-muted) !important;
+  cursor: pointer !important;
+  transition: color var(--duration-fast, 120ms) ease, background var(--duration-fast, 120ms) ease;
+  border-radius: var(--radius-xs, 4px) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.indo-date-input__clear:hover {
+  color: var(--color-danger) !important;
+  background: var(--color-danger-surface, rgba(220, 38, 38, 0.08)) !important;
+}
+
+.indo-date-input__cal-btn {
+  background: none !important;
+  border: none !important;
+  outline: none !important;
+  padding: 0 !important;
+  width: 26px !important;
+  height: 26px !important;
+  cursor: pointer !important;
+  color: var(--color-text-secondary) !important;
+  border-radius: var(--radius-xs, 4px) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: color var(--duration-fast, 120ms) ease, background var(--duration-fast, 120ms) ease;
+}
+.indo-date-input__cal-btn:hover,
+.indo-date-input__cal-btn.active {
+  color: var(--color-interactive) !important;
+  background: var(--color-interactive-light) !important;
+}
+
+/* ─── Disabled ────────────────────────────── */
+.indo-date-input--disabled {
+  opacity: 0.6 !important;
+  pointer-events: none !important;
+  background: var(--color-surface-alt) !important;
+}
+
+/* ─── Calendar Dropdown ───────────────────── */
+.indo-date-input__calendar {
+  position: absolute !important;
+  top: calc(100% + 6px) !important;
+  left: 0 !important;
+  z-index: 9999 !important;
+  background: var(--color-surface) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-lg, 12px) !important;
+  box-shadow: var(--shadow-popover, 0 10px 30px rgba(0,0,0,0.15)), 0 0 0 1px var(--color-interactive-ring) !important;
+  padding: 12px 14px !important;
+  width: 270px !important;
+  box-sizing: border-box !important;
+  animation: calSlideIn 0.16s var(--ease-out, cubic-bezier(0.16, 1, 0.3, 1)) !important;
+  user-select: none !important;
+}
+
+@keyframes calSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ─── Calendar Header ─────────────────────── */
+.indo-cal__header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 10px !important;
+  padding-bottom: 4px !important;
+}
+
+.indo-cal__title {
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  color: var(--color-text-primary) !important;
+  letter-spacing: -0.01em !important;
+}
+
+.indo-cal__nav {
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  padding: 5px !important;
+  cursor: pointer !important;
+  color: var(--color-text-secondary) !important;
+  border-radius: var(--radius-sm, 6px) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition:
+    background var(--duration-fast, 120ms) ease,
+    color var(--duration-fast, 120ms) ease,
+    border-color var(--duration-fast, 120ms) ease;
+}
+.indo-cal__nav:hover {
+  background: var(--color-interactive-light) !important;
+  color: var(--color-interactive) !important;
+  border-color: var(--color-interactive-ring) !important;
+}
+.indo-cal__nav:active {
+  transform: scale(0.94) !important;
+}
+
+/* ─── Calendar Grid ───────────────────────── */
+.indo-cal__grid {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important;
+  gap: 3px !important;
+}
+
+.indo-cal__day-label {
+  text-align: center !important;
+  font-size: 10.5px !important;
+  font-weight: 700 !important;
+  color: var(--color-text-muted) !important;
+  padding: 4px 0 6px !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+}
+
+.indo-cal__cell--empty {
+  aspect-ratio: 1 !important;
+}
+
+.indo-cal__cell {
+  aspect-ratio: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 13px !important;
+  border-radius: var(--radius-sm, 6px) !important;
+  border: 1px solid transparent !important;
+  background: transparent !important;
+  cursor: pointer !important;
+  color: var(--color-text-primary) !important;
+  font-family: inherit !important;
+  font-weight: 500 !important;
+  transition:
+    background var(--duration-fast, 120ms) ease,
+    color var(--duration-fast, 120ms) ease,
+    border-color var(--duration-fast, 120ms) ease,
+    transform var(--duration-fast, 120ms) ease;
+}
+
+.indo-cal__cell:hover {
+  background: var(--color-interactive-light) !important;
+  color: var(--color-interactive) !important;
+}
+
+.indo-cal__cell:active {
+  transform: scale(0.92) !important;
+}
+
+/* Today */
+.indo-cal__cell--today {
+  color: var(--color-interactive) !important;
+  font-weight: 700 !important;
+  border-color: var(--color-interactive) !important;
+  background: var(--color-interactive-light) !important;
+}
+
+/* Selected */
+.indo-cal__cell--selected {
+  background: var(--color-interactive) !important;
+  color: var(--color-text-inverse, #ffffff) !important;
+  border-color: var(--color-interactive) !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 8px var(--color-interactive-ring) !important;
+}
+
+.indo-cal__cell--selected:hover {
+  background: var(--color-interactive-hover, var(--color-interactive)) !important;
+  color: var(--color-text-inverse, #ffffff) !important;
+}
+
+.indo-cal__cell--today.indo-cal__cell--selected {
+  box-shadow: 0 2px 8px var(--color-interactive-ring) !important;
+}
+
+/* ─── Calendar Footer ─────────────────────── */
+.indo-cal__footer {
+  margin-top: 10px !important;
+  border-top: 1px solid var(--color-border-subtle) !important;
+  padding-top: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 8px !important;
+}
+
+.indo-cal__today-btn {
+  background: var(--color-interactive-light) !important;
+  border: 1px solid var(--color-interactive-ring) !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: var(--color-interactive) !important;
+  cursor: pointer !important;
+  padding: 5px 12px !important;
+  border-radius: var(--radius-sm, 6px) !important;
+  transition:
+    background var(--duration-fast, 120ms) ease,
+    color var(--duration-fast, 120ms) ease,
+    box-shadow var(--duration-fast, 120ms) ease,
+    transform var(--duration-fast, 120ms) ease;
+  font-family: inherit !important;
+  flex: 1 !important;
+  text-align: center !important;
+}
+
+.indo-cal__today-btn:hover {
+  background: var(--color-interactive) !important;
+  color: var(--color-text-inverse, #ffffff) !important;
+  border-color: var(--color-interactive) !important;
+  box-shadow: var(--shadow-btn-hover) !important;
+}
+
+.indo-cal__today-btn:active {
+  transform: scale(0.97) !important;
+}
+
+.indo-cal__clear-btn {
+  background: transparent !important;
+  border: 1px solid var(--color-border) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: var(--color-text-secondary) !important;
+  cursor: pointer !important;
+  padding: 5px 10px !important;
+  border-radius: var(--radius-sm, 6px) !important;
+  transition:
+    background var(--duration-fast, 120ms) ease,
+    color var(--duration-fast, 120ms) ease,
+    border-color var(--duration-fast, 120ms) ease;
+  font-family: inherit !important;
+}
+
+.indo-cal__clear-btn:hover {
+  background: var(--color-danger-surface, rgba(220, 38, 38, 0.08)) !important;
+  color: var(--color-danger) !important;
+  border-color: var(--color-danger) !important;
+}

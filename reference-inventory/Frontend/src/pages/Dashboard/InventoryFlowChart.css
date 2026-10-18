@@ -1,0 +1,294 @@
+.dashboard-chart-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.015);
+  overflow: visible;
+}
+
+.dashboard-chart-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.dashboard-chart-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.dashboard-chart-card__title-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.dashboard-chart-card__title-icon {
+  color: var(--color-interactive);
+}
+
+.dashboard-chart-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-body-lg);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.dashboard-chart-card__subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-caption);
+  color: var(--color-text-secondary);
+}
+
+.dashboard-chart-card__toggles {
+  display: flex;
+  background: var(--color-surface-alt);
+  border-radius: var(--radius-sm);
+  padding: var(--space-0-5);
+  border: 1px solid var(--color-border);
+}
+
+.dashboard-chart-card__toggle {
+  background: transparent;
+  border: none;
+  font-family: var(--font-body);
+  font-size: var(--text-overline);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+  padding: var(--space-1-5) var(--space-3);
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-inout);
+}
+
+.dashboard-chart-card__toggle:hover {
+  color: var(--color-text-primary);
+}
+
+.dashboard-chart-card__toggle--active {
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  font-weight: 700;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.dashboard-chart-card__chart-outer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.dashboard-chart-card__legend {
+  display: flex;
+  gap: var(--space-4);
+  align-self: flex-end;
+}
+
+.dashboard-chart-card__legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1-5);
+}
+
+.dashboard-chart-card__legend-color {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+}
+
+.dashboard-chart-card__legend-color--in {
+  background: var(--color-success);
+}
+
+.dashboard-chart-card__legend-color--out {
+  background: var(--color-warning);
+}
+
+.dashboard-chart-card__legend-label {
+  font-size: var(--text-overline);
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.dashboard-chart-card__svg-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.dashboard-chart-svg {
+  overflow: visible;
+}
+
+.chart-gridline {
+  stroke: var(--color-border-subtle);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+}
+
+.chart-axis-text {
+  font-family: var(--font-body);
+  font-size: 10px;
+  fill: var(--color-text-secondary);
+  user-select: none;
+}
+
+.chart-line {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: d 0.35s var(--ease-out);
+}
+
+.chart-line--in {
+  stroke: var(--color-success);
+}
+
+.chart-line--out {
+  stroke: var(--color-warning);
+}
+
+.chart-area {
+  transition: d 0.35s var(--ease-out);
+  pointer-events: none;
+}
+
+.chart-node {
+  stroke-width: 2;
+  transition: r 0.15s var(--ease-out), fill 0.15s var(--ease-out);
+}
+
+.chart-node--in {
+  fill: var(--color-surface);
+  stroke: var(--color-success);
+}
+
+.chart-node--out {
+  fill: var(--color-surface);
+  stroke: var(--color-warning);
+}
+
+.chart-node--active {
+  fill: var(--color-surface) !important;
+  stroke-width: 3.5;
+}
+
+.chart-guideline {
+  stroke: var(--color-border);
+  stroke-width: 1.5;
+  stroke-dasharray: 2 2;
+  pointer-events: none;
+}
+
+.chart-hover-trigger {
+  cursor: pointer;
+}
+
+/* Tooltip container */
+.chart-tooltip {
+  position: absolute;
+  top: 15px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-2-5) var(--space-3);
+  box-shadow: var(--shadow-popover);
+  pointer-events: none;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1-5);
+  min-width: 165px;
+  transition: left 0.1s var(--ease-out);
+}
+
+.chart-tooltip__date {
+  font-size: var(--text-overline);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding-bottom: var(--space-1);
+}
+
+.chart-tooltip__metrics {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.chart-tooltip__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.chart-tooltip__key {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1-5);
+  font-size: var(--text-caption);
+  color: var(--color-text-secondary);
+}
+
+.chart-tooltip__indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+}
+
+.chart-tooltip__indicator--in {
+  background: var(--color-success);
+}
+
+.chart-tooltip__indicator--out {
+  background: var(--color-warning);
+}
+
+.chart-tooltip__val {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* Skeleton & Error states */
+.dashboard-chart-card__skeleton {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-2) 0;
+}
+
+.dashboard-chart-card--error {
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-chart-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+.dashboard-chart-error__icon {
+  color: var(--color-danger);
+}

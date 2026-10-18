@@ -1,0 +1,290 @@
+/* Backdrop Overlay with blur */
+.history-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.15s ease-out;
+  padding: var(--space-4);
+}
+
+/* Modal Content Box */
+.history-modal {
+  width: 100%;
+  max-width: 960px;
+  max-height: 85vh;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  animation: scaleIn 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+/* Modal Header */
+.history-modal__header {
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-surface);
+}
+
+.history-modal__title {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.history-modal__close-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: var(--space-1-5);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--duration-fast) var(--ease-inout);
+}
+
+.history-modal__close-btn:hover {
+  background-color: var(--color-surface-hover);
+  color: var(--color-text-primary);
+}
+
+/* Modal Body */
+.history-modal__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-5);
+  background-color: var(--color-bg);
+}
+
+/* History Empty State */
+.history-modal__empty {
+  padding: var(--space-8) 0;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: 14px;
+}
+
+/* Table Wrapper */
+.history-table-wrapper {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  background-color: var(--color-surface);
+}
+
+/* Table styling */
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13px;
+  font-family: var(--font-body);
+}
+
+.history-table th {
+  background-color: var(--color-surface-alt);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-3) var(--space-4);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.history-table td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border-subtle);
+  color: var(--color-text-secondary);
+  vertical-align: middle;
+}
+
+.history-table tr:last-child td {
+  border-bottom: none;
+}
+
+.history-table tr:hover td {
+  background-color: var(--color-surface-hover) !important;
+}
+
+.history-table__ref {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.history-table__th--right {
+  text-align: right;
+}
+
+.history-table__qty {
+  text-align: right;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.history-table__sn-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  max-width: 280px;
+}
+
+/* Badges styling */
+.badge-tracking {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 6px;
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface-alt);
+  color: var(--color-text-secondary);
+  line-height: 1;
+}
+
+.badge-tracking--serial {
+  border-color: rgba(16, 185, 129, 0.2);
+  background-color: rgba(16, 185, 129, 0.08);
+  color: rgb(16, 185, 129);
+}
+
+.badge-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 6px;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  line-height: 1;
+}
+
+.badge-status--completed {
+  border-color: rgba(16, 185, 129, 0.2);
+  background-color: rgba(16, 185, 129, 0.08);
+  color: rgb(16, 185, 129);
+}
+
+.badge-status--pending {
+  border-color: rgba(245, 158, 11, 0.2);
+  background-color: rgba(245, 158, 11, 0.08);
+  color: rgb(245, 158, 11);
+}
+
+.badge-status--draft {
+  border-color: var(--color-border);
+  background-color: var(--color-surface-alt);
+  color: var(--color-text-muted);
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.96); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ==========================================================================
+   Mobile Responsive Styles (max-width: 640px)
+   ========================================================================== */
+@media (max-width: 640px) {
+  .history-modal {
+    max-height: 90vh;
+  }
+
+  .history-modal__body {
+    padding: var(--space-3);
+  }
+
+  .history-table-wrapper {
+    border: none;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  .history-table thead {
+    display: none;
+  }
+
+  .history-table tbody {
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .history-table tr {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2-5);
+    padding: var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .history-table td {
+    padding: 0 !important;
+    border-bottom: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
+  }
+
+  .history-table td[data-label] {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .history-table td[data-label]::before {
+    content: attr(data-label);
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+  }
+
+  .history-table td.history-table__ref {
+    grid-column: span 2;
+  }
+
+  .history-table td.history-table__qty {
+    grid-column: span 2;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .history-table td[data-label="Serial Numbers"] {
+    grid-column: span 2;
+  }
+
+  .history-table__sn-list {
+    max-width: 100%;
+  }
+}
+

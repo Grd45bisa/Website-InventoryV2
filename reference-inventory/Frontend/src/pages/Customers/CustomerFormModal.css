@@ -1,0 +1,347 @@
+/* ==========================================================================
+   Customer Form Modal — Bento Layout
+   ========================================================================== */
+
+.cust-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--color-overlay);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: cust-overlay-enter var(--duration-base) ease;
+}
+
+@keyframes cust-overlay-enter {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.cust-modal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 840px;
+  max-height: 92dvh;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl, 16px);
+  box-shadow:
+    0 24px 48px -12px rgba(0, 0, 0, 0.15),
+    0 12px 24px -8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  animation: cust-modal-enter 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes cust-modal-enter {
+  from { opacity: 0; transform: translateY(-16px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ---- Header ---- */
+.cust-modal__header {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+}
+
+.cust-modal__header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-interactive), var(--color-interactive-hover, var(--color-primary)));
+  border-radius: var(--radius-xl, 16px) var(--radius-xl, 16px) 0 0;
+}
+
+.cust-modal__header-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-lg, 12px);
+  background: color-mix(in srgb, var(--color-interactive) 10%, transparent);
+  color: var(--color-interactive);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cust-modal__title-area {
+  flex: 1;
+  min-width: 0;
+}
+
+.cust-modal__title {
+  font-family: var(--font-display);
+  font-size: var(--text-subhead);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.cust-modal__subtitle {
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+  margin: var(--space-1) 0 0 0;
+}
+
+.cust-modal__close-btn {
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  padding: var(--space-2);
+  border-radius: var(--radius-md, 8px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--duration-fast) var(--ease-inout),
+              color var(--duration-fast) var(--ease-inout);
+}
+
+.cust-modal__close-btn:hover {
+  background: var(--color-surface-alt);
+  color: var(--color-text-primary);
+}
+
+.cust-modal__close-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ---- Body ---- */
+.cust-modal__body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: var(--space-5) var(--space-6) var(--space-4);
+}
+
+.cust-modal__error {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--color-danger-surface);
+  border: 1px solid var(--color-danger-border, rgba(220, 38, 38, 0.15));
+  color: var(--color-danger);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md, 8px);
+  font-size: var(--text-small);
+  font-weight: 600;
+  margin-bottom: var(--space-4);
+}
+
+/* ---- Bento Grid ---- */
+.cust-modal__bento {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.cust-modal__bento-card {
+  background: var(--color-bg-subtle, color-mix(in srgb, var(--color-surface) 50%, var(--color-border)));
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.cust-modal__bento-card--full {
+  grid-column: 1 / -1;
+}
+
+/* ---- Section Header ---- */
+.cust-modal__section-header {
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cust-modal__section-title {
+  font-family: var(--font-display);
+  font-size: var(--text-caption, 11px);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.cust-modal__section-optional {
+  font-size: var(--text-caption, 11px);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  opacity: 0.6;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.cust-modal__section-title::before {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 14px;
+  border-radius: 2px;
+  background: var(--color-interactive);
+}
+
+/* ---- Fields Grid ---- */
+.cust-modal__fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.cust-modal__fields--3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.cust-modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1-5);
+}
+
+.cust-modal__field--span-2 {
+  grid-column: span 2;
+}
+
+.cust-modal__field--span-3 {
+  grid-column: 1 / -1;
+}
+
+.cust-modal__field-label {
+  font-size: var(--text-small);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1-5);
+}
+
+.cust-modal__field-label svg {
+  flex-shrink: 0;
+  opacity: 0.5;
+}
+
+.cust-modal__required {
+  color: var(--color-danger);
+}
+
+.cust-modal__field-error {
+  font-size: var(--text-caption, 11px);
+  color: var(--color-danger);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+/* ---- Input error state ---- */
+.input--error {
+  border-color: var(--color-danger) !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.08) !important;
+}
+
+/* ---- Footer ---- */
+.cust-modal__footer {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-6);
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg-subtle, transparent);
+}
+
+/* ---- Responsive: Tablet ---- */
+@media (max-width: 768px) {
+  .cust-modal__bento {
+    grid-template-columns: 1fr;
+  }
+
+  .cust-modal__header,
+  .cust-modal__body,
+  .cust-modal__footer {
+    padding-left: var(--space-5);
+    padding-right: var(--space-5);
+  }
+}
+
+/* ---- Responsive: Mobile full-screen ---- */
+@media (max-width: 576px) {
+  .cust-modal-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .cust-modal {
+    max-width: 100%;
+    max-height: 100dvh;
+    height: 100dvh;
+    border-radius: 0;
+    animation: cust-modal-slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes cust-modal-slide-up {
+    from { transform: translateY(100%); }
+    to   { transform: translateY(0); }
+  }
+
+  .cust-modal__header,
+  .cust-modal__body,
+  .cust-modal__footer {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+
+  .cust-modal__header-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .cust-modal__fields,
+  .cust-modal__fields--3 {
+    grid-template-columns: 1fr;
+  }
+
+  .cust-modal__field--span-2,
+  .cust-modal__field--span-3 {
+    grid-column: 1 / -1;
+  }
+
+  .cust-modal__footer {
+    flex-direction: column-reverse;
+    gap: var(--space-2);
+  }
+
+  .cust-modal__footer .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  .cust-modal,
+  .cust-modal-overlay {
+    animation: none;
+  }
+}

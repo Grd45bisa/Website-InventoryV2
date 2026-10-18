@@ -1,0 +1,136 @@
+.dashboard-quick-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.dashboard-quick-actions__title {
+  font-family: var(--font-display);
+  font-size: var(--text-body);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* ── Grid Layout ─────────────────────────────────────────── */
+.dashboard-quick-actions__grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 10px !important;
+}
+
+/* ── Common Card Base ────────────────────────────────────── */
+.dashboard-quick-actions__card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 11px 12px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 10px !important;
+  cursor: pointer;
+  transition: transform var(--duration-base) var(--ease-out),
+              border-color var(--duration-base) var(--ease-out),
+              box-shadow var(--duration-base) var(--ease-out);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.dashboard-quick-actions__card:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.dashboard-quick-actions__icon-wrap {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: var(--radius-md) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  transition: transform var(--duration-fast) var(--ease-inout);
+}
+
+.dashboard-quick-actions__card:hover .dashboard-quick-actions__icon-wrap {
+  transform: scale(1.04);
+}
+
+.dashboard-quick-actions__arrow {
+  display: none !important;
+}
+
+.dashboard-quick-actions__card-content {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+  flex: 1 !important;
+  min-width: 0 !important;
+}
+
+.dashboard-quick-actions__label {
+  font-family: var(--font-body);
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  color: var(--color-text-primary);
+  line-height: 1.25 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.dashboard-quick-actions__desc {
+  font-size: 10.5px !important;
+  color: var(--color-text-secondary);
+  line-height: 1.25 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+/* ── Accent Color Configurations (Flat Solid Colors) ──────── */
+/* Inbound (Goods In) */
+.dashboard-quick-actions__card--inbound:hover {
+  border-color: var(--color-success);
+}
+.dashboard-quick-actions__card--inbound .dashboard-quick-actions__icon-wrap {
+  background: var(--color-success-surface, #f0fdf4) !important;
+}
+.dashboard-quick-actions__card--inbound .dashboard-quick-actions__icon {
+  color: var(--color-success, #16a34a) !important;
+}
+
+/* Outbound (Goods Out) */
+.dashboard-quick-actions__card--outbound:hover {
+  border-color: var(--color-warning);
+}
+.dashboard-quick-actions__card--outbound .dashboard-quick-actions__icon-wrap {
+  background: var(--color-warning-surface, #fffbeb) !important;
+}
+.dashboard-quick-actions__card--outbound .dashboard-quick-actions__icon {
+  color: var(--color-warning, #d97706) !important;
+}
+
+/* Purchase Orders (Indigo Flat) */
+.dashboard-quick-actions__card--po:hover {
+  border-color: var(--color-interactive);
+}
+.dashboard-quick-actions__card--po .dashboard-quick-actions__icon-wrap {
+  background: var(--color-interactive-light, rgba(99, 102, 241, 0.08)) !important;
+}
+.dashboard-quick-actions__card--po .dashboard-quick-actions__icon {
+  color: var(--color-interactive, #6366f1) !important;
+}
+
+/* Products (Cyan / Blue Flat) */
+.dashboard-quick-actions__card--products:hover {
+  border-color: var(--color-info);
+}
+.dashboard-quick-actions__card--products .dashboard-quick-actions__icon-wrap {
+  background: var(--color-info-surface, #f0f9ff) !important;
+}
+.dashboard-quick-actions__card--products .dashboard-quick-actions__icon {
+  color: var(--color-info, #0284c7) !important;
+}

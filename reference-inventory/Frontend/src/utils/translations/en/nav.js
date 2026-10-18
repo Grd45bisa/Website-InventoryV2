@@ -1,0 +1,18 @@
+export const nav = {
+  'nav.appName': 'Docuflow',
+  'nav.hamburger': 'Open menu',
+  'nav.switchLang': 'Switch language',
+  'nav.switchTheme': 'Switch theme',
+  'nav.userMenu': 'User menu',
+  'nav.signOut': 'Sign Out',
+  'nav.quickAdd': 'Add',
+  'nav.quickAdd.customer': 'New Customer',
+  'nav.quickAdd.supplier': 'New Supplier',
+  'nav.quickAdd.document': 'New Document',
+  'nav.search': 'Search',
+  'nav.searchPlaceholder': 'Search customers, products, documents...',
+  'nav.searchClose': 'Close search',
+  'nav.notifications': 'Notifications',
+  'nav.markAllRead': 'Mark all as read',
+  'nav.noNotifications': 'No notifications',
+};

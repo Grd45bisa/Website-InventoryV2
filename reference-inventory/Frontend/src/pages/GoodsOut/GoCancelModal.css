@@ -1,0 +1,187 @@
+/* ============================================================
+   GoCancelModal — Cancel Goods Out with Reason
+   ============================================================ */
+
+.go-cancel-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--color-overlay);
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  backdrop-filter: blur(4px);
+}
+
+.go-cancel-modal {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-popover);
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  animation: go-cancel-enter var(--duration-slow) var(--ease-out);
+}
+
+@keyframes go-cancel-enter {
+  from { opacity: 0; transform: scale(0.97) translateY(-8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Header */
+.go-cancel__header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.go-cancel__header-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: var(--color-warning-surface, #fef9c3);
+  border: 1px solid var(--color-warning-border, #fde68a);
+  color: var(--color-warning, #d97706);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.go-cancel__header-text {
+  flex: 1;
+}
+
+.go-cancel__title {
+  font-family: var(--font-display);
+  font-size: var(--text-body-lg);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-0-5);
+}
+
+.go-cancel__ref {
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.go-cancel__close-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-text-secondary);
+  padding: var(--space-1-5);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background var(--duration-fast) var(--ease-inout);
+}
+
+.go-cancel__close-btn:hover {
+  background: var(--color-surface-alt);
+  color: var(--color-text-primary);
+}
+
+/* Body */
+.go-cancel__body {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.go-cancel__desc {
+  font-size: var(--text-small);
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Reason options */
+.go-cancel__reasons {
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.go-cancel__reasons-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-overline);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+
+.go-cancel__reason-option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2-5) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: var(--text-small);
+  color: var(--color-text-secondary);
+  transition: all var(--duration-fast) var(--ease-inout);
+  user-select: none;
+}
+
+.go-cancel__reason-option:hover {
+  border-color: var(--color-border-focus);
+  background: var(--color-surface-alt);
+  color: var(--color-text-primary);
+}
+
+.go-cancel__reason-option--selected {
+  border-color: var(--color-danger);
+  background: var(--color-danger-surface);
+  color: var(--color-danger);
+}
+
+.go-cancel__reason-radio {
+  accent-color: var(--color-danger);
+}
+
+/* Custom note textarea */
+.go-cancel__note-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1-5);
+}
+
+.go-cancel__note-label {
+  font-size: var(--text-small);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.go-cancel__note {
+  resize: none;
+}
+
+/* Footer */
+.go-cancel__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  border-top: 1px solid var(--color-border);
+}
+
+@media (max-width: 480px) {
+  .go-cancel-overlay { padding: 0; align-items: flex-end; }
+  .go-cancel-modal { border-radius: var(--radius-lg) var(--radius-lg) 0 0; }
+}
+

@@ -1,0 +1,117 @@
+.product-table-wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+}
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.product-table th {
+  font-family: var(--font-body);
+  font-size: var(--text-overline);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-overline);
+  color: var(--color-text-muted);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.product-table td {
+  font-size: var(--text-body);
+  color: var(--color-text-primary);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border-subtle);
+  vertical-align: middle;
+}
+
+.product-table tr:last-child td {
+  border-bottom: none;
+}
+
+.product-table__row {
+  transition: background-color var(--duration-fast) var(--ease-inout);
+}
+
+.product-table__row:hover td {
+  background: var(--color-surface-alt);
+}
+
+.product-table__thumbnail-cell {
+  width: 52px;
+  padding: var(--space-2) var(--space-3) !important;
+}
+
+.product-table__thumbnail-wrapper {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-alt);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+}
+
+.product-table__thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-table__name-cell {
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.product-table__name-link {
+  font-weight: 600;
+  color: var(--color-interactive);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-inout);
+}
+
+.product-table__name-link:hover {
+  color: var(--color-interactive-hover);
+  text-decoration: underline;
+}
+
+.product-table__sku-cell {
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  color: var(--color-text-secondary);
+}
+
+.product-table__category-cell {
+  color: var(--color-text-secondary);
+}
+
+.product-table__price-cell {
+  font-weight: 500;
+  color: var(--color-text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.product-table__stock-cell {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.product-table__stock-cell--healthy {
+  color: var(--color-text-primary);
+}
+
+.product-table__stock-cell--warning {
+  color: var(--color-warning);
+}
+
+.product-table__stock-cell--danger {
+  color: var(--color-danger);
+}

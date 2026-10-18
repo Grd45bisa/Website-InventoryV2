@@ -1,0 +1,44 @@
+.add-serial-inline {
+  border-left: 3px solid var(--color-interactive);
+  background: var(--color-surface-alt);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  animation: serial-inline-enter var(--duration-base) var(--ease-out);
+}
+
+@keyframes serial-inline-enter {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.add-serial-inline__form {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.add-serial-inline__input {
+  flex: 1;
+  font-family: var(--font-mono);
+}
+
+.add-serial-inline__input--error {
+  border-color: var(--color-danger);
+}
+
+.add-serial-inline__input--error:focus {
+  border-color: var(--color-danger);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+}
+
+.add-serial-inline__error {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-caption);
+  color: var(--color-danger);
+  font-weight: 500;
+}

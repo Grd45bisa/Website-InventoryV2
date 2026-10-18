@@ -1,0 +1,332 @@
+/* Owner Admin Access Control Grid */
+.modules-tab .settings-form__header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.admin-perms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.admin-perm-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: all var(--duration-fast) var(--ease-inout);
+}
+
+.admin-perm-card:hover {
+  border-color: var(--color-interactive);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.admin-perm-card__left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.admin-perm-card__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-alt);
+  color: var(--color-text-secondary);
+}
+
+.admin-perm-card__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-perm-card__label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* Custom switch toggle styling */
+.settings-toggle {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  background: var(--color-text-muted);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background var(--duration-fast);
+}
+
+.settings-toggle--on {
+  background: var(--color-interactive);
+}
+
+.settings-toggle__knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-full);
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  transition: transform var(--duration-fast) var(--ease-inout);
+}
+
+.settings-toggle--on .settings-toggle__knob {
+  transform: translateX(20px);
+}
+
+/* Super Admin modules management list */
+.modules-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.modules-stat-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.modules-stat-label {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.modules-stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.modules-stat-value--active {
+  color: var(--color-success);
+}
+
+.modules-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.modules-toolbar__left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex: 1;
+  min-width: 280px;
+}
+
+.modules-toolbar__search-wrap {
+  position: relative;
+  flex: 1;
+  max-width: 320px;
+}
+
+.modules-toolbar__search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+}
+
+.modules-toolbar__search {
+  padding-left: 36px !important;
+  width: 100%;
+}
+
+.modules-toolbar__select {
+  width: 160px;
+}
+
+.modules-toolbar__toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+}
+
+.modules-empty {
+  text-align: center;
+  padding: var(--space-8);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+}
+
+.modules-empty__icon-wrap {
+  margin-bottom: var(--space-2);
+}
+
+.modules-empty__title {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 var(--space-1);
+}
+
+.modules-empty__desc {
+  font-size: 13px;
+  margin: 0;
+}
+
+.modules-category {
+  margin-bottom: var(--space-6);
+}
+
+.modules-category__title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.modules-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+.module-card {
+  display: flex;
+  align-items: center;
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  gap: var(--space-4);
+}
+
+.module-card__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-alt);
+  color: var(--color-interactive);
+}
+
+.module-card__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.module-card__name-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.module-card__name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.module-card__desc {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.module-card__badges {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.module-badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+}
+
+.module-badge--wajib {
+  background: var(--color-interactive-light);
+  color: var(--color-interactive);
+}
+
+.module-badge--aktif {
+  background: var(--color-success-surface);
+  color: var(--color-success);
+}
+
+.module-badge--nonaktif {
+  background: var(--color-surface-alt);
+  color: var(--color-text-muted);
+}
+
+.module-card__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.module-card__btn {
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  padding: 4px;
+}
+
+.module-card__toggle-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.module-lock-icon {
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 768px) {
+  .modules-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+  .module-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+  .module-card__actions {
+    width: 100%;
+    justify-content: space-between;
+    border-top: 1px solid var(--color-border-subtle);
+    padding-top: var(--space-2);
+  }
+}

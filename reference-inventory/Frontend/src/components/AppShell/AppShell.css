@@ -1,0 +1,66 @@
+/* ============================================================
+   AppShell — Post-login layout grid
+   ============================================================ */
+
+.app-shell {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  grid-template-rows: 60px 1fr;
+  min-height: 100vh;
+}
+
+/* Topbar sits in column 2, row 1 on desktop */
+.app-shell__topbar {
+  grid-column: 2;
+  grid-row: 1;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Sidebar spans full height in column 1 on desktop */
+.app-shell__sidebar {
+  grid-column: 1;
+  grid-row: 1 / -1;
+}
+
+/* Main content fills column 2, below topbar on desktop */
+.app-shell__content {
+  grid-column: 2;
+  grid-row: 2 / -1;
+  padding: var(--space-8);
+  overflow-x: hidden;
+  background: var(--color-bg);
+  min-height: calc(100vh - 60px);
+  position: relative;
+}
+
+/* ---- Tablet & mobile: single column ---- */
+
+@media (max-width: 992px) {
+  .app-shell {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .app-shell__topbar {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .app-shell__sidebar {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .app-shell__content {
+    grid-column: 1;
+    grid-row: 2 / -1;
+    padding: var(--space-6);
+  }
+}
+
+@media (max-width: 768px) {
+  .app-shell__content {
+    padding: var(--space-3);
+  }
+}

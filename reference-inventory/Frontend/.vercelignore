@@ -1,0 +1,8 @@
+node_modules
+dist
+*.rar
+*.zip
+*.log
+.env
+.env.*
+!.env.example

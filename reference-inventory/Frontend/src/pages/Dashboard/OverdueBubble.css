@@ -1,0 +1,145 @@
+.overdue-bubble {
+  position: fixed;
+  top: calc(var(--topbar-height, 60px) + var(--space-3));
+  right: var(--space-4);
+  z-index: 900;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  border: 1px solid;
+  max-width: 320px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  animation: overdue-bubble-in 0.35s var(--ease-out);
+}
+
+@keyframes overdue-bubble-in {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.overdue-bubble--danger {
+  background: color-mix(in srgb, var(--color-danger) 8%, var(--color-surface));
+  border-color: color-mix(in srgb, var(--color-danger) 25%, transparent);
+}
+
+.overdue-bubble--warning {
+  background: color-mix(in srgb, var(--color-warning) 8%, var(--color-surface));
+  border-color: color-mix(in srgb, var(--color-warning) 25%, transparent);
+}
+
+.overdue-bubble__close {
+  position: absolute;
+  top: var(--space-1);
+  right: var(--space-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: background var(--duration-fast);
+}
+
+.overdue-bubble__close:hover {
+  background: var(--color-surface-alt);
+}
+
+.overdue-bubble__icon {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.overdue-bubble--danger .overdue-bubble__icon {
+  color: var(--color-danger);
+}
+
+.overdue-bubble--warning .overdue-bubble__icon {
+  color: var(--color-warning);
+}
+
+.overdue-bubble__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.overdue-bubble__title {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.4;
+  padding-right: 16px;
+}
+
+.overdue-bubble__stats {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.overdue-bubble__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.overdue-bubble__stat-num {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-warning);
+}
+
+.overdue-bubble__stat-num--danger {
+  color: var(--color-danger);
+}
+
+.overdue-bubble__stat-label {
+  font-size: 10px;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.overdue-bubble__action {
+  align-self: flex-start;
+  margin-top: var(--space-1);
+  padding: 3px 12px;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--duration-fast);
+}
+
+.overdue-bubble--danger .overdue-bubble__action {
+  background: var(--color-danger);
+  color: #fff;
+}
+
+.overdue-bubble--danger .overdue-bubble__action:hover {
+  opacity: 0.85;
+}
+
+.overdue-bubble--warning .overdue-bubble__action {
+  background: var(--color-warning);
+  color: #fff;
+}
+
+.overdue-bubble--warning .overdue-bubble__action:hover {
+  opacity: 0.85;
+}

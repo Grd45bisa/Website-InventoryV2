@@ -1,0 +1,1704 @@
+/* ============================================================
+   DocuFlow V2.4.1 - Goods In Modal Styles
+   Matches reference-inventory design adapted to DocuFlow tokens:
+   Flat colors, tanpa gradasi, no emoji, WCAG 2.2 AA contrast.
+   ============================================================ */
+
+/* ── Overlay ─────────────────────────────────────────────── */
+.gi-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(32, 37, 34, 0.6);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  backdrop-filter: blur(3px);
+}
+
+/* ── Modal shell ─────────────────────────────────────────── */
+.gi-modal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1080px;
+  height: 92dvh;
+  max-height: 92dvh;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-float);
+  overflow: hidden;
+}
+
+/* ── Header ──────────────────────────────────────────────── */
+.gi-modal__header {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.gi-modal__header--create {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 24px;
+}
+
+.gi-modal__header-title-box {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.gi-modal__title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.gi-modal__subtitle {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  margin: 3px 0 0;
+  line-height: 1.4;
+}
+
+.gi-modal__header-controls {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ── Unit Switcher ───────────────────────────────────────── */
+.gi-unit-switcher {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-muted);
+  padding: 3px;
+  gap: 4px;
+  box-sizing: border-box;
+}
+
+.gi-unit-switcher__label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  padding: 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  user-select: none;
+}
+
+.gi-unit-switcher__buttons {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.gi-unit-switcher__btn {
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  line-height: 1.3;
+}
+
+.gi-unit-switcher__btn:hover {
+  color: var(--color-text-primary);
+}
+
+.gi-unit-switcher__btn--active {
+  background: var(--color-surface);
+  color: var(--color-primary);
+  border-color: var(--color-border);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.gi-modal__close-btn {
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  color: var(--color-text-secondary);
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, color 0.15s;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.gi-modal__close-btn:hover {
+  background: var(--color-surface-muted);
+  color: var(--color-text-primary);
+}
+
+/* ── Scrollable Form Body ────────────────────────────────── */
+.gi-modal__body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 24px 140px;
+}
+
+.gi-modal__body > form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Transaction Info Card ───────────────────────────────── */
+.gi-modal__info-card {
+  flex-shrink: 0;
+  background: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+}
+
+.gi-modal__info-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+  margin: 0 0 12px;
+}
+
+.gi-modal__info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px 16px;
+}
+
+@media (min-width: 768px) {
+  .gi-modal__info-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.gi-modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gi-modal__field--full {
+  grid-column: 1 / -1;
+  margin-top: 6px;
+}
+
+.gi-modal__field-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.gi-modal__field-subtext {
+  font-size: 10px;
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+}
+
+.gi-modal__notes {
+  resize: vertical;
+  min-height: 56px;
+}
+
+/* Form input base controls - supports both .gi-input and .input within .gi-modal */
+.gi-input,
+.gi-modal .input,
+.input {
+  width: 100%;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  padding: 7px 10px;
+  font-size: 0.8125rem;
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.gi-input:focus,
+.gi-modal .input:focus,
+.input:focus {
+  border-color: var(--color-primary);
+  outline: 2px solid var(--color-primary);
+  outline-offset: 1px;
+}
+
+.gi-input:disabled,
+.gi-input[readonly],
+.gi-modal .input:disabled,
+.gi-modal .input[readonly],
+.input:disabled,
+.input[readonly] {
+  background: var(--color-surface-muted);
+  color: var(--color-text-secondary);
+  cursor: default;
+}
+
+/* Button styles matching reference */
+.gi-modal .btn,
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background 0.15s, color 0.15s, border-color 0.15s, opacity 0.15s;
+  user-select: none;
+}
+
+.gi-modal .btn-md,
+.btn-md {
+  min-height: 38px;
+  padding: 8px 16px;
+  font-size: 0.875rem;
+}
+
+.gi-modal .btn-secondary,
+.btn-secondary {
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  border-color: var(--color-border-strong);
+}
+
+.gi-modal .btn-secondary:hover:not(:disabled) {
+  background: var(--color-surface-muted);
+}
+
+.gi-modal .btn-primary,
+.btn-primary {
+  background: var(--color-primary);
+  color: rgb(255, 255, 255);
+  border-color: var(--color-primary);
+}
+
+.gi-modal .btn-primary:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+}
+
+.gi-modal .btn:disabled,
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Source / Supplier Dropdown ─────────────────────────── */
+.gi-source__wrap {
+  position: relative;
+  width: 100%;
+}
+
+.gi-source__input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.gi-source__search-icon {
+  position: absolute;
+  left: 10px;
+  color: var(--color-text-secondary);
+  pointer-events: none;
+}
+
+.gi-source__chevron {
+  position: absolute;
+  right: 10px;
+  color: var(--color-text-secondary);
+  pointer-events: none;
+}
+
+.gi-source__input {
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+  width: 100%;
+  cursor: pointer;
+}
+
+.gi-source__dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-float);
+  z-index: 100;
+  max-height: 220px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.gi-source__dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 12px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.8125rem;
+  color: var(--color-text-primary);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.gi-source__dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.gi-source__dropdown-item:hover {
+  background: var(--color-surface-muted);
+}
+
+/* ── Worksheet Section ───────────────────────────────────── */
+.gi-modal__worksheet {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  min-height: 0;
+}
+
+.gi-modal__items-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.gi-modal__items-header > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.gi-modal__items-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.gi-modal__items-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.gi-modal__items-count-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+}
+
+.gi-modal__add-row-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.gi-modal__add-row-btn:hover {
+  background: var(--color-primary-soft);
+}
+
+/* ── Desktop Table View ──────────────────────────────────── */
+.gi-modal__table-desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .gi-modal__table-desktop {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.gi-modal__table-wrapper {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  position: relative;
+  overflow: visible;
+}
+
+@media (max-width: 767px) {
+  .gi-modal__table-wrapper {
+    overflow-x: auto;
+  }
+}
+
+.gi-modal__table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.8125rem;
+  table-layout: fixed;
+  min-width: 660px;
+}
+
+.gi-modal__table thead tr {
+  background: var(--color-surface-muted);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.gi-modal__table th {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-secondary);
+  padding: 10px 12px;
+  text-align: left;
+  position: sticky;
+  top: 0;
+  background: var(--color-surface-muted);
+  z-index: 10;
+  border-bottom: 2px solid var(--color-border);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.gi-modal__table th.gi-th--center {
+  text-align: center;
+}
+
+.gi-modal__table th.gi-th--right {
+  text-align: right;
+}
+
+.gi-modal__table tbody tr {
+  border-bottom: 1px solid var(--color-border);
+  transition: background 0.15s;
+}
+
+.gi-modal__table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.gi-modal__table tbody tr:hover {
+  background: var(--color-surface-muted);
+}
+
+.gi-modal__table td {
+  padding: 10px 12px;
+  vertical-align: middle;
+}
+
+/* ── Line Item Controls ──────────────────────────────────── */
+.gi-line-item__dropdown-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.gi-line-item__search-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.gi-line-item__search-icon {
+  position: absolute;
+  left: 10px;
+  color: var(--color-text-secondary);
+  pointer-events: none;
+}
+
+.gi-line-item__search-chevron {
+  position: absolute;
+  right: 10px;
+  color: var(--color-text-secondary);
+  pointer-events: none;
+}
+
+.gi-line-item__search-input {
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+  width: 100%;
+  cursor: pointer;
+}
+
+.gi-line-item__dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  max-height: 240px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.gi-line-item__dropdown--upward {
+  top: auto;
+  bottom: calc(100% + 4px);
+}
+
+.gi-line-item__dropdown-empty {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.gi-line-item__dropdown-empty-text {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+}
+
+.gi-line-item__quick-create-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  padding: 7px 12px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: var(--color-surface-muted);
+  border: 1px dashed var(--color-primary);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background 0.15s, border-style 0.15s;
+}
+
+.gi-line-item__quick-create-btn:hover {
+  background: var(--color-surface);
+  border-style: solid;
+}
+
+.gi-line-item__dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 12px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.8125rem;
+  color: var(--color-text-primary);
+  border-bottom: 1px solid var(--color-border);
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.gi-line-item__dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.gi-line-item__dropdown-item:hover {
+  background: var(--color-surface-muted);
+}
+
+.gi-line-item__dropdown-item-name {
+  font-weight: 500;
+  color: var(--color-text-primary);
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gi-line-item__dropdown-item-sku {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  font-family: monospace;
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  background: var(--color-surface-muted);
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+}
+
+/* ── Mobile Product Tooltip / Popover ───────────────────────── */
+.gi-product-tooltip-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  z-index: 250;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  backdrop-filter: blur(2px);
+}
+
+.gi-product-tooltip {
+  width: 100%;
+  max-width: 380px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-float);
+  overflow: hidden;
+  animation: gi-tooltip-pop 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes gi-tooltip-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.gi-product-tooltip__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--color-surface-muted);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.gi-product-tooltip__title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+}
+
+.gi-product-tooltip__close-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-text-secondary);
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gi-product-tooltip__close-btn:hover {
+  background: var(--color-border);
+  color: var(--color-text-primary);
+}
+
+.gi-product-tooltip__body {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gi-product-tooltip__name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.4;
+  margin: 0;
+  word-break: break-word;
+}
+
+.gi-product-tooltip__meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+}
+
+.gi-product-tooltip__sku-label {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.gi-product-tooltip__sku {
+  font-family: monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  background: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+.gi-product-tooltip__footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 10px 14px;
+  background: var(--color-surface-muted);
+  border-top: 1px solid var(--color-border);
+}
+
+.gi-line-item__sku-disabled {
+  background: var(--color-surface-muted) !important;
+  cursor: default !important;
+  color: var(--color-text-secondary) !important;
+  border-color: var(--color-border) !important;
+  font-family: monospace;
+  font-size: 0.75rem;
+}
+
+.gi-line-item__qty-select-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gi-line-item__qty-num-input {
+  width: 72px !important;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.gi-line-item__qty-unit-select {
+  flex: 1;
+  min-width: 80px;
+}
+
+.gi-line-item__remove-btn {
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, color 0.15s;
+}
+
+.gi-line-item__remove-btn:hover {
+  background: var(--color-danger-soft);
+  color: var(--color-danger);
+}
+
+/* ── Mobile Cards View ───────────────────────────────────── */
+.gi-modal__cards-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .gi-modal__cards-mobile {
+    display: none;
+  }
+}
+
+.gi-line-item-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  background: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gi-line-item-card__field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gi-line-item-card__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* ── Footer ──────────────────────────────────────────────── */
+.gi-modal__footer {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.gi-serial-drawer {
+  background: var(--color-surface-muted);
+  border-top: 1px dashed var(--color-border);
+  padding: 10px 14px;
+}
+
+/* ── Goods In Detail Modal & Assignment Panel ──────────────── */
+.gi-detail-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(32, 37, 34, 0.6);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  backdrop-filter: blur(3px);
+}
+
+.gi-detail-modal {
+  max-width: 1040px;
+}
+
+.gi-detail__ref {
+  display: inline-block;
+  margin-top: 4px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-primary-border, var(--color-border));
+}
+
+.gi-detail__header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.gi-detail__worksheet {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.gi-detail__items-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 14px;
+  padding-bottom: 12px;
+  margin-top: 18px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.gi-detail__items-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gi-detail__icon-muted {
+  color: var(--color-text-secondary);
+}
+
+.gi-detail__items-count {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-muted);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+}
+
+.gi-detail__items-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.gi-modal__add-row-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-primary);
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.gi-modal__add-row-btn:hover:not(:disabled) {
+  background: var(--color-primary);
+  color: var(--color-surface);
+}
+
+.gi-modal__add-row-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Inline Assign Panel ───────────────────────────────────── */
+.gi-detail__assign-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px 20px;
+  margin-top: 14px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.gi-detail__assign-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.gi-detail__segmented {
+  display: inline-flex;
+  background: var(--color-surface-muted);
+  padding: 3px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+.gi-detail__seg-btn {
+  padding: 5px 14px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: none;
+  background: transparent;
+  color: var(--color-text-secondary);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.gi-detail__seg-btn:hover {
+  color: var(--color-text-primary);
+}
+
+.gi-detail__seg-btn--active {
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.gi-detail__assign-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.gi-detail__progress-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--color-surface-muted);
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+}
+
+.gi-detail__progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+}
+
+.gi-detail__progress-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gi-detail__progress-title {
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.gi-detail__progress-count {
+  font-family: var(--font-mono, monospace);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.gi-detail__progress-percent {
+  font-family: var(--font-mono, monospace);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.gi-detail__progress-track {
+  width: 100%;
+  height: 8px;
+  background: var(--color-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.gi-detail__progress-fill {
+  height: 100%;
+  background: var(--color-primary);
+  transition: width 0.2s ease-in-out;
+}
+
+.gi-detail__assign-headers {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .gi-detail__assign-headers {
+    display: grid;
+    grid-template-columns: 1fr 140px 1.5fr 40px;
+    gap: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    padding: 0 4px 6px;
+    border-bottom: 1px solid var(--color-border);
+  }
+}
+
+.gi-detail__assign-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gi-detail__assign-row {
+  border-bottom: 1px dashed var(--color-border);
+  padding-bottom: 8px;
+}
+
+.gi-detail__assign-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.flex-row-desktop {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (min-width: 768px) {
+  .flex-row-desktop {
+    display: grid;
+    grid-template-columns: 1fr 140px 1.5fr 40px;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+.gi-detail__assign-field {
+  flex: 1;
+}
+
+.gi-detail__assign-field--unit {
+  width: 100%;
+}
+
+.gi-detail__assign-field--serial {
+  flex: 1;
+}
+
+.gi-detail__assign-field--remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gi-detail__assign-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 1px solid var(--color-border);
+}
+
+.gi-detail__add-row-dashed {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 12px;
+  background: transparent;
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.gi-detail__add-row-dashed:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-surface-muted);
+}
+
+.gi-detail__add-row-dashed:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.gi-detail__assign-bottom-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gi-detail__bottom-status-pill {
+  font-size: 0.75rem;
+  font-family: var(--font-mono, monospace);
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-muted);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+}
+
+.gi-detail__bottom-status-pill--ready {
+  background: var(--color-success-soft);
+  color: var(--color-success);
+  border-color: var(--color-success-border, var(--color-border));
+}
+
+.gi-detail__td-number {
+  text-align: center;
+  font-family: var(--font-mono, monospace);
+  color: var(--color-text-secondary);
+}
+
+.gi-detail__td-name--parent {
+  font-weight: 600;
+}
+
+.gi-detail__td-sku {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+
+.gi-detail__td-qty {
+  text-align: right;
+  font-weight: 600;
+  font-family: var(--font-mono, monospace);
+}
+
+.chip-success {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  background: var(--color-success-soft);
+  color: var(--color-success);
+  border: 1px solid var(--color-border);
+}
+
+.chip-warning {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  background: var(--color-warning-soft);
+  color: var(--color-warning);
+  border: 1px solid var(--color-border);
+}
+
+/* ── Expandable Serial Row in Detail Modal ──────────────────── */
+.gi-detail__serials-subrow {
+  background: var(--color-surface-muted);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.gi-detail__serials-subrow td {
+  padding: 10px 16px 14px 16px !important;
+}
+
+.gi-detail__serials-subrow-box {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gi-detail__serials-subrow-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 8px;
+}
+
+.gi-detail__serials-chip-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-height: 180px;
+  overflow-y: auto;
+  padding-top: 4px;
+}
+
+.gi-detail__serial-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.6875rem;
+  color: var(--color-text-primary);
+  user-select: all;
+}
+
+.gi-detail__serial-chip-idx {
+  font-size: 0.625rem;
+  color: var(--color-text-secondary);
+  font-family: sans-serif;
+}
+
+.gi-detail-modal .gi-modal__footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Footer detail tidak sticky di desktop, jadi body nggak perlu space besar di bawah */
+.gi-detail-modal .gi-modal__body {
+  padding-bottom: 24px;
+}
+
+/* ── Mobile Layout Enhancements for New Goods In Modal ────── */
+@media (max-width: 1023px) {
+  .gi-modal-overlay {
+    padding: 0;
+    align-items: stretch;
+  }
+
+  .gi-modal {
+    width: 100%;
+    max-width: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+  }
+
+  .gi-modal__header {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .gi-modal__header--create {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 10px 8px;
+    padding: 12px 14px;
+    align-items: flex-start;
+  }
+
+  .gi-modal__header--create .gi-modal__header-title-box {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    min-width: 0;
+  }
+
+  .gi-modal__header--create .gi-modal__close-btn {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    align-self: flex-start;
+    margin-top: -2px;
+    margin-right: -4px;
+    min-width: 36px;
+    min-height: 36px;
+  }
+
+  .gi-modal__header--create .gi-modal__header-controls {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: 2px;
+  }
+
+  .gi-modal__header--create .gi-unit-switcher {
+    width: 100%;
+    justify-content: space-between;
+    padding: 3px 6px;
+  }
+
+  .gi-modal__header--create .gi-unit-switcher__btn {
+    padding: 5px 14px;
+    font-size: 0.75rem;
+  }
+
+  .gi-modal__title {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  .gi-modal__subtitle {
+    font-size: 0.71875rem;
+    line-height: 1.35;
+    margin-top: 2px;
+  }
+
+  .gi-modal__body {
+    padding: 12px 12px 96px;
+    gap: 14px;
+  }
+
+  .gi-modal__info-card {
+    padding: 12px;
+    border-radius: var(--radius-md);
+  }
+
+  .gi-modal__info-title {
+    margin-bottom: 8px;
+    font-size: 0.6875rem;
+  }
+
+  .gi-modal__info-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .gi-modal__items-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .gi-modal__items-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .gi-modal__items-header-actions > button {
+    flex: 1;
+    justify-content: center;
+    font-size: 0.75rem;
+    padding: 6px 10px;
+  }
+
+  .gi-line-item-card {
+    padding: 12px;
+    gap: 10px;
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  }
+
+  .gi-line-item-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .gi-line-item-card__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .gi-line-item-card__conv-badge {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-surface-muted);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+
+  .gi-line-item__dropdown-item {
+    padding: 9px 10px;
+    gap: 6px;
+  }
+
+  .gi-line-item__dropdown-item-name {
+    font-size: 0.75rem; /* Lebih kecil khusus mobile, 1 baris, ellipsis */
+    line-height: 1.35;
+  }
+
+  .gi-line-item__dropdown-item-sku {
+    font-size: 10px;
+    padding: 1.5px 5px;
+  }
+
+  .gi-modal__footer {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 14px;
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    z-index: 30;
+    gap: 8px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .gi-modal__footer-btn-post {
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 42px;
+    padding: 8px 10px;
+    font-size: 0.8125rem;
+    box-sizing: border-box;
+    white-space: nowrap;
+    justify-content: center;
+  }
+
+  .gi-modal__footer-btn-submit {
+    flex: 1.25 1 0;
+    min-width: 0;
+    min-height: 42px;
+    padding: 8px 12px;
+    font-size: 0.8125rem;
+    box-sizing: border-box;
+    white-space: nowrap;
+    justify-content: center;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 360px) {
+  .gi-modal__footer {
+    flex-direction: column-reverse;
+    gap: 8px;
+    padding: 8px 12px;
+  }
+
+  .gi-modal__footer-btn-post,
+  .gi-modal__footer-btn-submit {
+    width: 100%;
+    flex: 0 0 auto;
+  }
+}
+
+/* ── Detail Modal — Mobile Layout ─────────────────────────── */
+@media (max-width: 1023px) {
+  /* Fullscreen seperti create modal */
+  .gi-detail-overlay {
+    padding: 0;
+    align-items: stretch;
+    justify-content: stretch;
+  }
+
+  .gi-detail-modal.gi-modal {
+    width: 100%;
+    max-width: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+  }
+
+  .gi-detail-modal .gi-modal__header {
+    position: relative;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    row-gap: 10px;
+    padding: 12px 14px;
+    padding-right: 52px;
+  }
+
+  .gi-detail-modal .gi-detail__header-right {
+    flex: 1 0 100%;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* Close button tetap di pojok kanan atas agar selalu terjangkau */
+  .gi-detail-modal .gi-detail__header-right .gi-modal__close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    min-width: 36px;
+    min-height: 36px;
+  }
+
+  .gi-detail-modal .gi-detail__header-right .btn {
+    flex: 1 1 auto;
+    justify-content: center;
+    min-height: 40px;
+  }
+
+  .gi-detail-modal .gi-modal__body {
+    padding: 12px 12px 16px;
+  }
+
+  .gi-detail__items-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding-bottom: 10px;
+  }
+
+  .gi-detail__items-actions {
+    width: 100%;
+  }
+
+  .gi-detail__items-actions > button {
+    flex: 1 1 auto;
+    justify-content: center;
+    min-height: 40px;
+    min-width: 0;
+    white-space: nowrap;
+  }
+
+  .gi-detail__assign-toolbar {
+    gap: 10px;
+  }
+
+  .gi-detail__segmented {
+    width: 100%;
+  }
+
+  .gi-detail__seg-btn {
+    flex: 1;
+    text-align: center;
+  }
+
+  /* Footer: dua grup (aksi utama + sekunder) ditumpuk penuh lebar, mudah dijangkau thumb */
+  .gi-detail-modal .gi-modal__footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+  }
+
+  .gi-detail-modal .gi-modal__footer > div {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .gi-detail-modal .gi-modal__footer > div > button {
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 42px;
+    justify-content: center;
+    white-space: nowrap;
+    padding: 8px 12px;
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .gi-detail-modal .gi-modal__footer > div > button {
+    font-size: 0.75rem;
+    padding: 8px 8px;
+    gap: 4px !important;
+  }
+
+  .gi-detail__items-actions > button {
+    font-size: 0.75rem;
+    padding: 8px 10px;
+  }
+}
+
+
+
