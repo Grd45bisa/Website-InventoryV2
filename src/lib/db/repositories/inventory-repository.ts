@@ -23,6 +23,7 @@ import {
   evaluateCrossWarehouseSerialGuard,
   normalizeSerialNumber,
   reconstructStockBalance,
+  reconcileStockOpnameItem,
 } from "../../inventory/ledger-engine.ts";
 import type {
   ActiveSerialRecord,
@@ -327,7 +328,70 @@ export interface StockOpnameLineRecord {
   countedQty: number;
   varianceQty: number;
   reconciliationStatus?: string | null;
+  discrepancyReason?: string | null;
+  investigationNotes?: string | null;
   scannedSerials?: string[];
+}
+
+export interface StockOpnameSerialDetail {
+  matchedSerials: Array<{
+    serialNumber: string;
+    normalized: string;
+    unit: string;
+    baseQuantity: number;
+    scannedInArea?: string;
+  }>;
+  missingSerials: Array<{
+    serialNumber: string;
+    normalized: string;
+    unit: string;
+    baseQuantity: number;
+    dispatchedPostSnapshot?: boolean;
+    postSnapshotDocNumber?: string;
+  }>;
+  surplusSerials: Array<{
+    serialNumber: string;
+    normalized: string;
+    unit: string;
+    baseQuantity: number;
+    receivedPostSnapshot?: boolean;
+    postSnapshotDocNumber?: string;
+    source: "SCANNED" | "SCAN_ERROR";
+  }>;
+}
+
+export interface StockOpnameReconciliationItem extends StockOpnameLineRecord {
+  deltaIn: number;
+  deltaOut: number;
+  netDelta: number;
+  dynamicBookQty: number;
+  hasConcurrentMovement: boolean;
+  recommendation: "READY_FOR_ADJUSTMENT" | "REQUIRES_RE_EVALUATION" | "REQUIRES_INVESTIGATION";
+  areaBreakdown: Array<{
+    areaId: string;
+    areaName: string;
+    countedQtyBase: number;
+  }>;
+  serialDetail?: StockOpnameSerialDetail;
+  concurrentTransactions: Array<{
+    entryType: string;
+    sourceDocType: string;
+    sourceDocId: string;
+    quantityDeltaBase: number;
+    occurredAt: string;
+    createdAt: string;
+  }>;
+}
+
+export interface StockOpnameReconciliationSummary {
+  session: StockOpnameSessionRecord;
+  totalSku: number;
+  matchCount: number;
+  surplusCount: number;
+  shortageCount: number;
+  investigationCount: number;
+  netDiscrepancyQty: number;
+  items: StockOpnameReconciliationItem[];
 }
 
 export interface StockOpnameSessionDetail {
@@ -4371,7 +4435,8 @@ export class InventoryRepository {
       SELECT sol.id, sol.session_id, sol.product_id, p.name as product_name,
              p.sku, p.tracking_mode, sol.unit, sol.snapshot_qty,
              sol.dynamic_book_qty, sol.counted_qty, sol.variance_qty,
-             sol.reconciliation_status, sol.scanned_serials_json
+             sol.reconciliation_status, sol.discrepancy_reason,
+             sol.investigation_notes, sol.scanned_serials_json
       FROM stock_opname_lines sol
       JOIN products p ON p.id = sol.product_id
       WHERE sol.session_id = ?
@@ -4389,6 +4454,8 @@ export class InventoryRepository {
       counted_qty: number;
       variance_qty: number;
       reconciliation_status: string | null;
+      discrepancy_reason: string | null;
+      investigation_notes: string | null;
       scanned_serials_json: string | null;
     }>;
 
@@ -4405,6 +4472,8 @@ export class InventoryRepository {
       countedQty: Number(l.counted_qty),
       varianceQty: Number(l.variance_qty),
       reconciliationStatus: l.reconciliation_status,
+      discrepancyReason: l.discrepancy_reason,
+      investigationNotes: l.investigation_notes,
       scannedSerials: l.scanned_serials_json ? JSON.parse(l.scanned_serials_json) : [],
     }));
 
@@ -5840,6 +5909,575 @@ export class InventoryRepository {
     `).run(sessionId, context.ownerId);
 
     return { archivedCount: Number(result.changes) };
+  }
+
+  /**
+   * =========================================================================
+   * PHASE 5: REKONSILIASI, INVESTIGASI SELISIH, & DELTA CONCURRENT (SO_TASK §5)
+   * =========================================================================
+   */
+
+  /**
+   * Evaluasi Rekonsiliasi Dinamis Terhadap Mutasi Operasional (TASK-SO-05-01)
+   * Menghitung:
+   * 1. Delta concurrent (Goods In / Goods Out) pasca snapshot beku.
+   * 2. Stok acuan dinamis = Snapshot Qty + Delta In - Delta Out.
+   * 3. Total hitungan fisik dari seluruh area aktif.
+   * 4. Selisih bersih = Fisik - Stok Acuan Dinamis.
+   * 5. Drill-down rincian Serial Number: SN Cocok, SN Hilang, SN Asing/Surplus.
+   * Memperbarui stock_opname_lines TANPA mengubah saldo stok atau mem-posting ledger.
+   */
+  evaluateStockOpnameReconciliation(
+    context: ActiveSecurityContext,
+    sessionId: string
+  ): StockOpnameReconciliationSummary {
+    this.assertContext(context);
+
+    const sessionRow = this.db.prepare(`
+      SELECT so.id, so.owner_id, so.warehouse_id, w.name as warehouse_name,
+             so.session_number, so.title, so.scope_config, so.status,
+             so.started_at, so.snapshot_at, so.reviewed_at, so.adjusted_at,
+             u.email as created_by_email, so.note
+      FROM stock_opname_sessions so
+      JOIN warehouses w ON w.id = so.warehouse_id
+      JOIN users u ON u.id = so.created_by_user_id
+      WHERE so.id = ? AND so.owner_id = ?
+    `).get(sessionId, context.ownerId) as {
+      id: string;
+      owner_id: string;
+      warehouse_id: string;
+      warehouse_name: string;
+      session_number: string;
+      title: string | null;
+      scope_config: string | null;
+      status: "DRAFT" | "COUNTING" | "REVIEW" | "ADJUSTED" | "COMPLETED" | "CANCELLED";
+      started_at: string;
+      snapshot_at: string | null;
+      reviewed_at: string | null;
+      adjusted_at: string | null;
+      created_by_email: string;
+      note: string | null;
+    } | undefined;
+
+    if (!sessionRow) {
+      throw new AppError("ERR_NOT_FOUND", `Sesi Stock Opname '${sessionId}' tidak ditemukan.`, 404);
+    }
+
+    this.assertContext(context, sessionRow.warehouse_id);
+
+    // 1. Ambil baris produk pada sesi opname
+    const lineRows = this.db.prepare(`
+      SELECT sol.id, sol.session_id, sol.product_id, p.name as product_name,
+             p.sku, p.tracking_mode, sol.unit, sol.snapshot_qty,
+             sol.dynamic_book_qty, sol.counted_qty, sol.variance_qty,
+             sol.reconciliation_status, sol.discrepancy_reason,
+             sol.investigation_notes, sol.scanned_serials_json
+      FROM stock_opname_lines sol
+      JOIN products p ON p.id = sol.product_id
+      WHERE sol.session_id = ?
+      ORDER BY p.name ASC
+    `).all(sessionId) as Array<{
+      id: string;
+      session_id: string;
+      product_id: string;
+      product_name: string;
+      sku: string;
+      tracking_mode: "SERIAL" | "NON_SERIAL";
+      unit: string;
+      snapshot_qty: number;
+      dynamic_book_qty: number | null;
+      counted_qty: number;
+      variance_qty: number;
+      reconciliation_status: string | null;
+      discrepancy_reason: string | null;
+      investigation_notes: string | null;
+      scanned_serials_json: string | null;
+    }>;
+
+    // 2. Query transaksi pergerakan concurrent pasca snapshot dari immutable ledger
+    const snapshotAt = sessionRow.snapshot_at || sessionRow.started_at;
+    const ledgerRows = this.db.prepare(`
+      SELECT il.id, il.product_id, il.entry_type, il.source_doc_type, il.source_doc_id,
+             il.quantity_delta_base, il.serial_ids_json, il.occurred_at, il.created_at
+      FROM inventory_ledger il
+      WHERE il.owner_id = ? AND il.warehouse_id = ? AND il.created_at > ?
+      ORDER BY il.created_at ASC
+    `).all(context.ownerId, sessionRow.warehouse_id, snapshotAt) as Array<{
+      id: string;
+      product_id: string;
+      entry_type: string;
+      source_doc_type: string;
+      source_doc_id: string;
+      quantity_delta_base: number;
+      serial_ids_json: string | null;
+      occurred_at: string;
+      created_at: string;
+    }>;
+
+    // Mapping pergerakan ledger concurrent per produk
+    const ledgerByProduct = new Map<string, Array<{
+      entryType: string;
+      sourceDocType: string;
+      sourceDocId: string;
+      quantityDeltaBase: number;
+      serialIds: string[];
+      occurredAt: string;
+      createdAt: string;
+    }>>();
+
+    for (const row of ledgerRows) {
+      let serialIds: string[] = [];
+      if (row.serial_ids_json) {
+        try {
+          serialIds = JSON.parse(row.serial_ids_json);
+        } catch {
+          serialIds = [];
+        }
+      }
+      const list = ledgerByProduct.get(row.product_id) || [];
+      list.push({
+        entryType: row.entry_type,
+        sourceDocType: row.source_doc_type,
+        sourceDocId: row.source_doc_id,
+        quantityDeltaBase: Number(row.quantity_delta_base),
+        serialIds,
+        occurredAt: row.occurred_at,
+        createdAt: row.created_at,
+      });
+      ledgerByProduct.set(row.product_id, list);
+    }
+
+    // 3. Query hitungan fisik dari seluruh area yang sah (bukan CANCELLED)
+    const areaCounts = this.db.prepare(`
+      SELECT ac.id, ac.area_id, a.name as area_name, ac.product_id,
+             ac.counted_qty_base, ac.scanned_serials_json
+      FROM stock_opname_area_counts ac
+      JOIN stock_opname_areas a ON a.id = ac.area_id
+      WHERE ac.session_id = ? AND a.status != 'CANCELLED'
+    `).all(sessionId) as Array<{
+      id: string;
+      area_id: string;
+      area_name: string;
+      product_id: string;
+      counted_qty_base: number;
+      scanned_serials_json: string | null;
+    }>;
+
+    const areaCountsByProduct = new Map<string, Array<{
+      areaId: string;
+      areaName: string;
+      countedQtyBase: number;
+      scannedSerials: any[];
+    }>>();
+
+    for (const ac of areaCounts) {
+      let serials: any[] = [];
+      if (ac.scanned_serials_json) {
+        try {
+          serials = JSON.parse(ac.scanned_serials_json);
+        } catch {
+          serials = [];
+        }
+      }
+      const list = areaCountsByProduct.get(ac.product_id) || [];
+      list.push({
+        areaId: ac.area_id,
+        areaName: ac.area_name,
+        countedQtyBase: Number(ac.counted_qty_base),
+        scannedSerials: serials,
+      });
+      areaCountsByProduct.set(ac.product_id, list);
+    }
+
+    // 4. Query snapshot serial number beku
+    const serialSnapshots = this.db.prepare(`
+      SELECT id, product_id, serial_number, normalized_serial_number, unit, base_quantity, status_at_snapshot
+      FROM stock_opname_serial_snapshots
+      WHERE session_id = ?
+    `).all(sessionId) as Array<{
+      id: string;
+      product_id: string;
+      serial_number: string;
+      normalized_serial_number: string;
+      unit: string;
+      base_quantity: number;
+      status_at_snapshot: string;
+    }>;
+
+    const snSnapshotsByProduct = new Map<string, Array<{
+      id: string;
+      serialNumber: string;
+      normalized: string;
+      unit: string;
+      baseQuantity: number;
+      status: string;
+    }>>();
+
+    for (const sn of serialSnapshots) {
+      const list = snSnapshotsByProduct.get(sn.product_id) || [];
+      list.push({
+        id: sn.id,
+        serialNumber: sn.serial_number,
+        normalized: sn.normalized_serial_number,
+        unit: sn.unit,
+        baseQuantity: Number(sn.base_quantity),
+        status: sn.status_at_snapshot,
+      });
+      snSnapshotsByProduct.set(sn.product_id, list);
+    }
+
+    // 5. Query riwayat error scan tidak terdaftar (untuk deteksi SN surplus/asing)
+    const scanErrors = this.db.prepare(`
+      SELECT scanned_value, error_type, created_at
+      FROM stock_opname_scan_errors
+      WHERE session_id = ? AND error_type = 'UNREGISTERED_SERIAL'
+    `).all(sessionId) as Array<{
+      scanned_value: string;
+      error_type: string;
+      created_at: string;
+    }>;
+
+    const reconItems: StockOpnameReconciliationItem[] = [];
+    const updateLineStmt = this.db.prepare(`
+      UPDATE stock_opname_lines
+      SET dynamic_book_qty = ?, counted_qty = ?, variance_qty = ?, reconciliation_status = ?
+      WHERE id = ?
+    `);
+
+    const now = new Date().toISOString();
+
+    this.db.transaction(() => {
+      for (const line of lineRows) {
+        const productLedger = ledgerByProduct.get(line.product_id) || [];
+        let deltaIn = 0;
+        let deltaOut = 0;
+        for (const entry of productLedger) {
+          if (entry.quantityDeltaBase > 0) {
+            deltaIn += entry.quantityDeltaBase;
+          } else if (entry.quantityDeltaBase < 0) {
+            deltaOut += Math.abs(entry.quantityDeltaBase);
+          }
+        }
+        const netDelta = deltaIn - deltaOut;
+
+        const productAreas = areaCountsByProduct.get(line.product_id) || [];
+        const totalCountedBase = productAreas.reduce((acc, curr) => acc + curr.countedQtyBase, 0);
+
+        const snapshotQty = Number(line.snapshot_qty);
+        const dynamicBookQty = snapshotQty + netDelta;
+        const varianceQty = totalCountedBase - dynamicBookQty;
+
+        // Evaluasi matematika resmi via ledger engine
+        const engineResult = reconcileStockOpnameItem(
+          line.product_id,
+          snapshotQty,
+          dynamicBookQty,
+          totalCountedBase
+        );
+
+        // Drill-down Serial Number (jika produk bertipe SERIAL)
+        let serialDetail: StockOpnameSerialDetail | undefined;
+        let hasSerialMismatch = false;
+
+        if (line.tracking_mode === "SERIAL") {
+          const snapshotSns = snSnapshotsByProduct.get(line.product_id) || [];
+          const scannedSnsMap = new Map<string, { serialNumber: string; normalized: string; unit: string; baseQuantity: number; areaName: string }>();
+
+          for (const a of productAreas) {
+            for (const s of a.scannedSerials) {
+              const snVal = typeof s === "string" ? s : s.serialNumber;
+              const norm = normalizeSerialNumber(snVal);
+              scannedSnsMap.set(norm, {
+                serialNumber: snVal,
+                normalized: norm,
+                unit: (typeof s === "object" && s.unit) || line.unit,
+                baseQuantity: (typeof s === "object" && s.baseQuantity) || 1,
+                areaName: a.areaName,
+              });
+            }
+          }
+
+          // Cek serial keluar pasca snapshot dari ledger (Goods Out)
+          const postSnapshotOutSerials = new Set<string>();
+          for (const tx of productLedger) {
+            if (tx.quantityDeltaBase < 0) {
+              for (const sid of tx.serialIds) {
+                postSnapshotOutSerials.add(sid);
+              }
+            }
+          }
+
+          const matchedSerials: StockOpnameSerialDetail["matchedSerials"] = [];
+          const missingSerials: StockOpnameSerialDetail["missingSerials"] = [];
+
+          for (const sn of snapshotSns) {
+            const foundScanned = scannedSnsMap.get(sn.normalized);
+            if (foundScanned) {
+              matchedSerials.push({
+                serialNumber: sn.serialNumber,
+                normalized: sn.normalized,
+                unit: sn.unit,
+                baseQuantity: sn.baseQuantity,
+                scannedInArea: foundScanned.areaName,
+              });
+            } else {
+              // Cek apakah SN ini legal keluar karena transaksi Goods Out pasca-snapshot
+              const dispatched = postSnapshotOutSerials.has(sn.id) || postSnapshotOutSerials.has(sn.serialNumber) || postSnapshotOutSerials.has(sn.normalized);
+              missingSerials.push({
+                serialNumber: sn.serialNumber,
+                normalized: sn.normalized,
+                unit: sn.unit,
+                baseQuantity: sn.baseQuantity,
+                dispatchedPostSnapshot: dispatched,
+              });
+              if (!dispatched) {
+                hasSerialMismatch = true;
+              }
+            }
+          }
+
+          // Cek serial surplus: SN terhitung tetapi tidak ada di snapshot
+          const surplusSerials: StockOpnameSerialDetail["surplusSerials"] = [];
+          const snapshotNormSet = new Set(snapshotSns.map((s) => s.normalized));
+
+          for (const [norm, sc] of scannedSnsMap.entries()) {
+            if (!snapshotNormSet.has(norm)) {
+              surplusSerials.push({
+                serialNumber: sc.serialNumber,
+                normalized: norm,
+                unit: sc.unit,
+                baseQuantity: sc.baseQuantity,
+                source: "SCANNED",
+              });
+              hasSerialMismatch = true;
+            }
+          }
+
+          // Sertakan scan errors unregistered serials
+          for (const err of scanErrors) {
+            const normErr = normalizeSerialNumber(err.scanned_value);
+            if (!snapshotNormSet.has(normErr) && !scannedSnsMap.has(normErr)) {
+              surplusSerials.push({
+                serialNumber: err.scanned_value,
+                normalized: normErr,
+                unit: line.unit,
+                baseQuantity: 1,
+                source: "SCAN_ERROR",
+              });
+            }
+          }
+
+          serialDetail = {
+            matchedSerials,
+            missingSerials,
+            surplusSerials,
+          };
+        }
+
+        // Tentukan status rekonsiliasi kanonis: MATCH, SURPLUS, SHORTAGE, atau REQUIRES_RE_EVALUATION
+        let reconciliationStatus: "MATCH" | "SURPLUS" | "SHORTAGE" | "REQUIRES_RE_EVALUATION";
+        if (hasSerialMismatch || (engineResult.hasConcurrentMovement && varianceQty !== 0)) {
+          reconciliationStatus = "REQUIRES_RE_EVALUATION";
+        } else if (varianceQty === 0) {
+          reconciliationStatus = "MATCH";
+        } else if (varianceQty > 0) {
+          reconciliationStatus = "SURPLUS";
+        } else {
+          reconciliationStatus = "SHORTAGE";
+        }
+
+        let recommendation: StockOpnameReconciliationItem["recommendation"] = engineResult.recommendation;
+        if (reconciliationStatus === "REQUIRES_RE_EVALUATION" || hasSerialMismatch) {
+          recommendation = "REQUIRES_RE_EVALUATION";
+        } else if (varianceQty !== 0) {
+          recommendation = "REQUIRES_INVESTIGATION";
+        }
+
+        // Simpan hasil perhitungan ke stock_opname_lines (TANPA menyentuh inventory_ledger)
+        updateLineStmt.run(dynamicBookQty, totalCountedBase, varianceQty, reconciliationStatus, line.id);
+
+        reconItems.push({
+          id: line.id,
+          sessionId: line.session_id,
+          productId: line.product_id,
+          productName: line.product_name,
+          sku: line.sku,
+          trackingMode: line.tracking_mode,
+          unit: line.unit,
+          snapshotQty,
+          deltaIn,
+          deltaOut,
+          netDelta,
+          dynamicBookQty,
+          countedQty: totalCountedBase,
+          varianceQty,
+          reconciliationStatus,
+          hasConcurrentMovement: engineResult.hasConcurrentMovement,
+          recommendation,
+          discrepancyReason: line.discrepancy_reason,
+          investigationNotes: line.investigation_notes,
+          areaBreakdown: productAreas.map((pa) => ({
+            areaId: pa.areaId,
+            areaName: pa.areaName,
+            countedQtyBase: pa.countedQtyBase,
+          })),
+          serialDetail,
+          concurrentTransactions: productLedger.map((tx) => ({
+            entryType: tx.entryType,
+            sourceDocType: tx.sourceDocType,
+            sourceDocId: tx.sourceDocId,
+            quantityDeltaBase: tx.quantityDeltaBase,
+            occurredAt: tx.occurredAt,
+            createdAt: tx.createdAt,
+          })),
+        });
+      }
+
+      // Tandai reviewed_at pada sesi jika belum terisi
+      if (!sessionRow.reviewed_at) {
+        this.db.prepare(`
+          UPDATE stock_opname_sessions
+          SET reviewed_at = ?, updated_at = ?
+          WHERE id = ?
+        `).run(now, now, sessionId);
+      }
+    });
+
+    const matchCount = reconItems.filter((i) => i.reconciliationStatus === "MATCH").length;
+    const surplusCount = reconItems.filter((i) => i.reconciliationStatus === "SURPLUS").length;
+    const shortageCount = reconItems.filter((i) => i.reconciliationStatus === "SHORTAGE").length;
+    const investigationCount = reconItems.filter(
+      (i) => i.reconciliationStatus === "REQUIRES_RE_EVALUATION" || i.hasConcurrentMovement || Boolean(i.discrepancyReason)
+    ).length;
+    const netDiscrepancyQty = reconItems.reduce((acc, curr) => acc + curr.varianceQty, 0);
+
+    return {
+      session: {
+        id: sessionRow.id,
+        ownerId: sessionRow.owner_id,
+        warehouseId: sessionRow.warehouse_id,
+        warehouseName: sessionRow.warehouse_name,
+        sessionNumber: sessionRow.session_number,
+        title: sessionRow.title,
+        scope: "ALL",
+        scopeConfig: sessionRow.scope_config,
+        status: sessionRow.status,
+        startedAt: sessionRow.started_at,
+        snapshotAt: sessionRow.snapshot_at,
+        reviewedAt: sessionRow.reviewed_at ?? now,
+        adjustedAt: sessionRow.adjusted_at,
+        createdBy: sessionRow.created_by_email,
+        note: sessionRow.note,
+        itemCount: reconItems.length,
+        varianceCount: surplusCount + shortageCount,
+      },
+      totalSku: reconItems.length,
+      matchCount,
+      surplusCount,
+      shortageCount,
+      investigationCount,
+      netDiscrepancyQty,
+      items: reconItems,
+    };
+  }
+
+  /**
+   * Menyimpan Catatan Investigasi Selisih (TASK-SO-05-03)
+   * Menyimpan alasan dan catatan ke stock_opname_lines serta mencatat ke audit_logs.
+   * Dilarang mengubah hasil hitungan fisik atau snapshot awal.
+   */
+  saveStockOpnameInvestigation(
+    context: ActiveSecurityContext,
+    input: {
+      sessionId: string;
+      productId: string;
+      reason: string;
+      notes?: string;
+    }
+  ): { success: boolean; productId: string; discrepancyReason: string; investigationNotes: string | null } {
+    this.assertContext(context);
+
+    const session = this.db.prepare(`
+      SELECT id, owner_id, warehouse_id, session_number, status
+      FROM stock_opname_sessions
+      WHERE id = ? AND owner_id = ?
+    `).get(input.sessionId, context.ownerId) as {
+      id: string;
+      owner_id: string;
+      warehouse_id: string;
+      session_number: string;
+      status: string;
+    } | undefined;
+
+    if (!session) {
+      throw new AppError("ERR_NOT_FOUND", `Sesi Stock Opname '${input.sessionId}' tidak ditemukan.`, 404);
+    }
+    this.assertContext(context, session.warehouse_id);
+
+    if (session.status === "ADJUSTED" || session.status === "COMPLETED" || session.status === "CANCELLED") {
+      throw new AppError(
+        "ERR_CONFLICT",
+        `Sesi '${session.session_number}' berstatus '${session.status}' dan tidak dapat menerima catatan investigasi baru.`,
+        409
+      );
+    }
+
+    const cleanReason = (input.reason || "").trim();
+    if (!cleanReason) {
+      throw new AppError("ERR_VALIDATION", "Alasan investigasi selisih wajib diisi.", 400);
+    }
+
+    const cleanNotes = input.notes?.trim() || null;
+
+    return this.db.transaction(() => {
+      const line = this.db.prepare(`
+        SELECT id, product_id, snapshot_qty, counted_qty, variance_qty
+        FROM stock_opname_lines
+        WHERE session_id = ? AND product_id = ?
+      `).get(input.sessionId, input.productId) as {
+        id: string;
+        product_id: string;
+        snapshot_qty: number;
+        counted_qty: number;
+        variance_qty: number;
+      } | undefined;
+
+      if (!line) {
+        throw new AppError("ERR_NOT_FOUND", `Produk '${input.productId}' tidak terdaftar pada sesi ini.`, 404);
+      }
+
+      this.db.prepare(`
+        UPDATE stock_opname_lines
+        SET discrepancy_reason = ?, investigation_notes = ?
+        WHERE id = ?
+      `).run(cleanReason, cleanNotes, line.id);
+
+      this.recordAudit(
+        context.ownerId,
+        session.warehouse_id,
+        context.userId,
+        "STOCK_OPNAME_INVESTIGATION_RECORDED",
+        "STOCK_OPNAME_LINE",
+        line.id,
+        {
+          sessionId: input.sessionId,
+          sessionNumber: session.session_number,
+          productId: input.productId,
+          reason: cleanReason,
+          notes: cleanNotes,
+          snapshotQty: line.snapshot_qty,
+          countedQty: line.counted_qty,
+          varianceQty: line.variance_qty,
+        }
+      );
+
+      return {
+        success: true,
+        productId: input.productId,
+        discrepancyReason: cleanReason,
+        investigationNotes: cleanNotes,
+      };
+    });
   }
 
   /**

@@ -285,6 +285,8 @@ CREATE TABLE IF NOT EXISTS stock_opname_lines (
   counted_qty NUMERIC NOT NULL,
   variance_qty NUMERIC NOT NULL,
   reconciliation_status TEXT,
+  discrepancy_reason TEXT,
+  investigation_notes TEXT,
   scanned_serials_json TEXT,
   adjustment_posted INTEGER NOT NULL DEFAULT 0 CHECK (adjustment_posted IN (0, 1)),
   created_at TEXT NOT NULL

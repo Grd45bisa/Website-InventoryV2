@@ -304,14 +304,14 @@ export function StockOpnameScannerPanel({
             <div className="font-semibold flex items-center gap-1.5">
               <span>
                 {lastResult.success
-                  ? "✓ SN VALID & TERCATAT"
+                  ? "[VALID] SN VALID & TERCATAT"
                   : lastResult.resultType === "DUPLICATE_IN_AREA"
-                  ? "⚠ DUPLIKAT DI AREA INI"
+                  ? "[DUPLIKAT] DUPLIKAT DI AREA INI"
                   : lastResult.resultType === "DUPLICATE_CROSS_AREA"
-                  ? "⚠ DUPLIKAT LINTAS AREA"
+                  ? "[DUPLIKAT] DUPLIKAT LINTAS AREA"
                   : lastResult.resultType === "INVALID_UNIT"
-                  ? "✕ SATUAN INVALID PERLU AUDIT"
-                  : "✕ SN TIDAK TERDAFTAR DI SNAPSHOT"}
+                  ? "[INVALID] SATUAN INVALID PERLU AUDIT"
+                  : "[ASING] SN TIDAK TERDAFTAR DI SNAPSHOT"}
               </span>
               <span className="font-mono text-[11px] px-1 py-0.2 rounded bg-black/5">
                 {lastResult.serialNumber}

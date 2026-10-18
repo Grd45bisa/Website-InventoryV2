@@ -672,6 +672,47 @@ export async function archiveStockOpnameScanErrorsAction(sessionId: string) {
   }
 }
 
+export async function evaluateStockOpnameReconciliationAction(sessionId: string) {
+  const session = await getServerSessionContext();
+  if (!session) {
+    return { success: false, error: "Akses tidak diizinkan. Silakan login terlebih dahulu." };
+  }
+
+  try {
+    const repo = new InventoryRepository();
+    const summary = repo.evaluateStockOpnameReconciliation(session.context, sessionId);
+    revalidatePath(`/inventory/stock-opname/${sessionId}`);
+    revalidatePath("/inventory/stock-opname");
+    return { success: true, summary };
+  } catch (err: unknown) {
+    const message = err instanceof AppError ? err.message : (err instanceof Error ? err.message : "Gagal mengevaluasi rekonsiliasi Stock Opname.");
+    return { success: false, error: message };
+  }
+}
+
+export async function saveStockOpnameInvestigationAction(input: {
+  sessionId: string;
+  productId: string;
+  reason: string;
+  notes?: string;
+}) {
+  const session = await getServerSessionContext();
+  if (!session) {
+    return { success: false, error: "Akses tidak diizinkan. Silakan login terlebih dahulu." };
+  }
+
+  try {
+    const repo = new InventoryRepository();
+    const result = repo.saveStockOpnameInvestigation(session.context, input);
+    revalidatePath(`/inventory/stock-opname/${input.sessionId}`);
+    revalidatePath("/audit-log");
+    return result;
+  } catch (err: unknown) {
+    const message = err instanceof AppError ? err.message : (err instanceof Error ? err.message : "Gagal menyimpan catatan investigasi.");
+    return { success: false, error: message };
+  }
+}
+
 export async function createPurchaseOrderAction(
   input: CreatePurchaseOrderInput
 ): Promise<{ success: true; po: PurchaseOrderRecord } | { success: false; error: string; po?: undefined }> {

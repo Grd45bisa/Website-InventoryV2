@@ -21,6 +21,7 @@ import { StockOpnameSerialDrawer } from "./stock-opname-serial-drawer";
 import { StockOpnameCountDialog } from "./stock-opname-count-dialog";
 import { StockOpnameScannerPanel } from "./stock-opname-scanner-panel";
 import { StockOpnameErrorDrawer } from "./stock-opname-error-drawer";
+import { StockOpnameReconciliationView } from "./stock-opname-reconciliation-view";
 import type {
   StockOpnameAreaRecord,
   StockOpnameScanResult,
@@ -77,6 +78,9 @@ export function StockOpnameDetailView({
   const [searchQuery, setSearchQuery] = useState("");
   const [trackingFilter, setTrackingFilter] = useState<"ALL" | "SERIAL" | "NON_SERIAL">("ALL");
   const [statusFilter, setStatusFilter] = useState<"ALL" | "MATCH" | "SURPLUS" | "DEFICIT" | "UNCOUNTED">("ALL");
+
+  // Tab Switcher Utama (Penghitungan Area vs Review Rekonsiliasi)
+  const [activeMainTab, setActiveMainTab] = useState<"COUNTING" | "RECONCILIATION">("COUNTING");
 
   // Display Unit Switcher (PCS vs Lusin)
   const [displayUnit, setDisplayUnit] = useState<"pcs" | "lusin">("pcs");
@@ -452,12 +456,45 @@ export function StockOpnameDetailView({
         />
       )}
 
-      {/* 2. Stat Summary Cards */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
-        <div className="p-3.5 rounded-xl border border-border-default bg-surface-card">
-          <div className="text-[11px] text-text-muted font-medium uppercase tracking-wider">
-            Total Snapshot
-          </div>
+      {/* Tab Switcher: 1. Penghitungan Fisik per Area | 2. Review Rekonsiliasi & Delta Concurrent */}
+      <div className="flex border-b border-border-default space-x-6">
+        <button
+          type="button"
+          onClick={() => setActiveMainTab("COUNTING")}
+          className={`pb-3 text-xs sm:text-sm font-semibold border-b-2 transition-colors ${
+            activeMainTab === "COUNTING"
+              ? "border-primary text-primary"
+              : "border-transparent text-text-secondary hover:text-text-primary"
+          }`}
+        >
+          1. Penghitungan Fisik per Area
+        </button>
+        <button
+          type="button"
+          onClick={() => setActiveMainTab("RECONCILIATION")}
+          className={`pb-3 text-xs sm:text-sm font-semibold border-b-2 transition-colors flex items-center gap-2 ${
+            activeMainTab === "RECONCILIATION"
+              ? "border-primary text-primary"
+              : "border-transparent text-text-secondary hover:text-text-primary"
+          }`}
+        >
+          <span>2. Review Rekonsiliasi & Delta Concurrent</span>
+          {varianceCount > 0 && (
+            <Badge variant="danger" size="sm">
+              {varianceCount} Selisih
+            </Badge>
+          )}
+        </button>
+      </div>
+
+      {activeMainTab === "COUNTING" ? (
+        <>
+          {/* 2. Stat Summary Cards */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+            <div className="p-3.5 rounded-xl border border-border-default bg-surface-card">
+              <div className="text-[11px] text-text-muted font-medium uppercase tracking-wider">
+                Total Snapshot
+              </div>
           <div className="text-xl sm:text-2xl font-bold text-text-primary mt-1 font-mono">
             {items.length}
           </div>
@@ -862,6 +899,13 @@ export function StockOpnameDetailView({
             onPageChange={setCurrentPage}
           />
         </>
+      )}
+        </>
+      ) : (
+        <StockOpnameReconciliationView
+          sessionId={session.id}
+          isReadOnly={isReadOnlyMode}
+        />
       )}
 
       {/* 7. Dialogs & Drawers */}

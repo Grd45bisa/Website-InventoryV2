@@ -701,6 +701,28 @@ export function runMigrations(db: DatabaseClient): MigrationResult {
     });
   }
 
+  const fifteenthMigrationName = "0015_stock_opname_phase5_reconciliation";
+  if (!appliedSet.has(fifteenthMigrationName)) {
+    db.transaction(() => {
+      const lineCols = db.prepare("PRAGMA table_info(stock_opname_lines)").all() as Array<{ name: string }>;
+      const existingLineCols = new Set(lineCols.map((c) => c.name));
+      if (!existingLineCols.has("discrepancy_reason")) {
+        db.exec("ALTER TABLE stock_opname_lines ADD COLUMN discrepancy_reason TEXT;");
+      }
+      if (!existingLineCols.has("investigation_notes")) {
+        db.exec("ALTER TABLE stock_opname_lines ADD COLUMN investigation_notes TEXT;");
+      }
+
+      const now = new Date().toISOString();
+      db.prepare("INSERT INTO _migrations (id, name, applied_at) VALUES (?, ?, ?)").run(
+        "mig-0015",
+        fifteenthMigrationName,
+        now
+      );
+      applied.push(fifteenthMigrationName);
+    });
+  }
+
   return {
     success: true,
     applied,
